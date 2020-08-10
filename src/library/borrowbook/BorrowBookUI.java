@@ -1,17 +1,23 @@
 package library.borrowbook;
 import java.util.Scanner;
 
+// Author: Prajwal Kumar Ale
+// Mediator: Sudhir Thapaliya
+// Reviewer: Saujan Thapa
 
 public class BorrowBookUI {
 	
 // 	public static enum uI_STaTe { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
-	public static enum uiState { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
+	public static enum uiState { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED }; //changed uI_STaTe to uiState
 
 // 	private bORROW_bOOK_cONTROL CoNtRoL;
-	private borrowBookControl control;
+	private borrowBookControl control; //changed bORROW_bOOK_cONTROL CoNtRoL to borrowBookControl control
 	
-	private Scanner InPuT;
-	private uI_STaTe StaTe;
+// 	private Scanner InPuT;
+	private Scanner input; //changed InPuT to input
+	
+// 	private uI_STaTe StaTe;
+	private uiState state; //changed uI_STaTe StaTe to uiState state
 
 	
 	public BorrowBookUI(bORROW_bOOK_cONTROL control) {
