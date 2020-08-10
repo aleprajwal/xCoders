@@ -7,12 +7,7 @@ import library.entities.Library;
 import library.entities.Loan;
 import library.entities.Member;
 
-// Author: Prajwal Kumar Ale
-// Mediator: Sudhir Thapaliya
-// Reviewer: Saujan Thapa
-
-// public class bORROW_bOOK_cONTROL {
-public class BorrowBookControl { //changed class name bORROW_bOOK_cONTROL to BorrowBookControl
+public class bORROW_bOOK_cONTROL {
 	
 	private BorrowBookUI uI;
 	
