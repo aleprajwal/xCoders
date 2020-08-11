@@ -1,14 +1,21 @@
 package library.entities;
 import java.io.Serializable;
 
+// Author: Prajwal Kumar Ale
+// Mediator: Sudhir Thapaliya
+// Reviewer: Saujan Thapa
 
 @SuppressWarnings("serial")
 public class Book implements Serializable {
 	
-	private String tItLe;
-	private String AuThOr;
-	private String CALLNO;
-	private int iD;
+// 	private String tItLe;
+	private String title; // changed variable name tItLe to title
+// 	private String AuThOr;
+	private String author; // changed variable name AuThOr to author
+// 	private String CALLNO;
+	private String callNo; // changed variable name CALLNO to callNo
+// 	private int iD;
+	private int id; // changed variable name iD to id
 	
 	private enum sTaTe { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
 	private sTaTe StAtE;
