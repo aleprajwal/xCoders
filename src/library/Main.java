@@ -19,7 +19,7 @@ import library.returnBook.rETURN_bOOK_cONTROL;
 
 public class Main {
 	
-	private static Scanner IN;
+	private static Scanner in;
 	private static Library LIB;
 	private static String MENU;
 	private static Calendar CAL;
@@ -54,7 +54,7 @@ public class Main {
 
 	public static void main(String[] args) {		
 		try {			
-			IN = new Scanner(System.in);
+			in = new Scanner(System.in);
 			LIB = Library.GeTiNsTaNcE();
 			CAL = Calendar.gEtInStAnCe();
 			SDF = new SimpleDateFormat("dd/MM/yyyy");
@@ -135,7 +135,8 @@ public class Main {
 		output("\nEnded\n");
 	}	
 
-		private static void PAY_FINES() {
+	
+	private static void PAY_FINES() {
 		new PayFineUI(new pAY_fINE_cONTROL()).RuN();		
 	}
 
@@ -224,7 +225,7 @@ public class Main {
 
 	private static String input(String prompt) {
 		System.out.print(prompt);
-		return IN.nextLine();
+		return in.nextLine();
 	}
 	
 	
