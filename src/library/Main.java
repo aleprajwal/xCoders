@@ -178,7 +178,7 @@ public class Main {
 
 
 	private static void FIX_BOOKS() {
-		new FixBookUI(new fIX_bOOK_cONTROL()).RuN();		
+		new FixBookUI(new fIX_BOOK_cONTROL()).RuN();		
 	}
 
 
