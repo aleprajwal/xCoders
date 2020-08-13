@@ -13,13 +13,17 @@ public class Calendar {
 	private static java.util.Calendar calendar;//variable name changed from cAlEnDaR to calendar
 	
 	
-	private Calendar() {
-		cAlEnDaR = java.util.Calendar.getInstance();
+	//private Calendar() {
+	private isCalendar() { //Calendar() changes to isCalendar()
+		//cAlEnDaR = java.util.Calendar.getInstance();
+		isCalendar = java.util.Calendar.getInstance();//cAlEnDaR changes to isCalendar
 	}
 	
-	public static Calendar gEtInStAnCe() {
+	//public static Calendar gEtInStAnCe() {
+	public static getCalendarInstance() {	//Calendar gEtInStAnCe() changes to getCalendarInstance()
 		if (sElF == null) {
-			sElF = new Calendar();
+			//sElF = new Calendar();
+			sElF = new isCalendar();//Calendar() changes to isCalendar()
 		}
 		return sElF;
 	}
