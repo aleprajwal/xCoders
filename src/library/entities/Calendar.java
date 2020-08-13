@@ -1,11 +1,16 @@
+//Author: Mukesh
+//Reviewer: Sudhir
+//Mediator: Saujan
 package library.entities;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class Calendar {
 	
-	private static Calendar sElF;
-	private static java.util.Calendar cAlEnDaR;
+	//private static Calendar sElF;
+	private static calendarSelf; //variable name changed from Calendar sElF to calendarSelf 
+	//private static java.util.Calendar cAlEnDaR;
+	private static java.util.Calendar calendar;//variable name changed from cAlEnDaR to calendar
 	
 	
 	private Calendar() {
@@ -49,7 +54,8 @@ public class Calendar {
 	}
 
 	public synchronized Date gEt_DuE_DaTe(int loanPeriod) {
-		Date nOw = gEt_DaTe();
+		//Date nOw = gEt_DaTe();
+		dateNow = getDate();//variable name  Date nOw changed to datenow,method name gEt_DaTe(); changed to getDate();
 		cAlEnDaR.add(java.util.Calendar.DATE, loanPeriod);
 		Date dUeDaTe = cAlEnDaR.getTime();
 		cAlEnDaR.setTime(nOw);
