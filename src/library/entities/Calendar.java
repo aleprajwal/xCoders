@@ -65,9 +65,12 @@ public class Calendar {
 	
 	public synchronized long GeT_DaYs_DiFfErEnCe(Date targetDate) {
 		
-		long Diff_Millis = gEt_DaTe().getTime() - targetDate.getTime();
-	    long Diff_Days = TimeUnit.DAYS.convert(Diff_Millis, TimeUnit.MILLISECONDS);
-	    return Diff_Days;
+		//long Diff_Millis = gEt_DaTe().getTime() - targetDate.getTime();
+		long diffMillis = getDate().getTime() - targetDate.getTime();// variable name Diff_Millis  changed to diffMillis,method name gEt_DaTe() changed to getDate()
+	    //long Diff_Days = TimeUnit.DAYS.convert(Diff_Millis, TimeUnit.MILLISECONDS);
+	    long diffDays = TimeUnit.DAYS.isConvert(diffMillis, timeUnit.MILLISECONDS);//variable name Diff_Days,Diff_Millis changed to diffDays,diffMillis also method name convert(Diff_Millis, TimeUnit.MILLISECONDS); changed to isConvert(diffMillis, timeUnit.MILLISECONDS);
+	    //return Diff_Days;
+	    return diffDays;//variable name Diff_Days changed to diffDays
 	}
 
 }
