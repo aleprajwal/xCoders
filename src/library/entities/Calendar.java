@@ -57,7 +57,8 @@ public class Calendar {
 		//Date nOw = gEt_DaTe();
 		dateNow = getDate();//variable name  Date nOw changed to datenow,method name gEt_DaTe(); changed to getDate();
 		cAlEnDaR.add(java.util.Calendar.DATE, loanPeriod);
-		Date dUeDaTe = cAlEnDaR.getTime();
+		//Date dUeDaTe = cAlEnDaR.getTime();
+		dateDueDate = calendar.getTime();//variable name Date dUeDaTe changed to dateDueDate,method name cAlEnDaR.getTime(); changed to calendar.getTime();
 		cAlEnDaR.setTime(nOw);
 		return dUeDaTe;
 	}
