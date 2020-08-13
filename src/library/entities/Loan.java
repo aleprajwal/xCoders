@@ -6,7 +6,8 @@ import java.util.Date;
 @SuppressWarnings("serial")
 public class Loan implements Serializable {
 	
-	public static enum lOaN_sTaTe { CURRENT, OVER_DUE, DISCHARGED };
+// 	public static enum lOaN_sTaTe { CURRENT, OVER_DUE, DISCHARGED };
+	public static enum LoanState { CURRENT, OVER_DUE, DISCHARGED }; // changed name from lOaN_sTaTe to LoanState
 	
 	private int LoAn_Id;
 	private Book BoOk;
