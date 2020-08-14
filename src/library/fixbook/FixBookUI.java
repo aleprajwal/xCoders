@@ -4,65 +4,93 @@ import java.util.Scanner;
 
 public class FixBookUI {
 
-	public static enum UIState { INITIALISED, READY, FIXING, COMPLETED };
-
-	private FixBookControl control;
-	private Scanner input;
-	private UIState state;
+	//public static enum uI_sTaTe { INITIALISED, READY, FIXING, COMPLETED };
+	public static enum UIState { INITIALISED, READY, FIXING, COMPLETED };//change enum naming convention
+	//private fIX_bOOK_cONTROL CoNtRoL;
+	private FixBookControl control;//changed reference of Class as the class name is change i fix book control
+	//private Scanner InPuT;
+	private Scanner input;// fixed variable naming convention
+	//private uI_sTaTe StAtE;
+	private UIState state;// fixed variable naming convention
 
 	
-	public FixBookUI(FixBookControl control) {
-		this.control = control;
-		input = new Scanner(System.in);
-		state = UIState.INITIALISED;
-		control.setUI(this);
+	//public FixBookUI(fIX_bOOK_cONTROL CoNtRoL) {
+	public FixBookUI(FixBookControl control) {// fixed Parameter Class name and argument naming convention
+		//this.CoNtRoL = CoNtRoL;
+		this.control = control;// variable naming convention fix
+		//InPuT = new Scanner(System.in);
+		input = new Scanner(System.in);// variable naming convention fix
+		//StAtE = uI_sTaTe.INITIALISED;
+		state = UIState.INITIALISED;// Enum/variable naming convention fix
+		//CoNtRoL.SeT_Ui(this);
+		control.setUI(this);// changed the varianble and function name as he function is changed in fixbookcontrol.java
 	}
 
 
-	public void setState(UIState state) {
-		this.state = state;
+	//public void SeT_StAtE(uI_sTaTe state) {
+	public void setState(UIState state) {//fixed method and argument naming convention
+		//this.StAtE = state;
+		this.state = state;// fixed variables naming convention
 	}
 
-	
-	public void run() {
-		output("Fix Book Use Case UI\n");
+	//public void RuN() {
+	public void run() {//change methods naming convvention
+		//OuTpUt("Fix Book Use Case UI\n");
+		output("Fix Book Use Case UI\n");// changed functions name which is inside this class
 		
 		while (true) {
 			
-			switch (state) {
-			
+			//switch (StAtE) {
+			switch (state) {// changed variable name
+
 			case READY:
-				String bookEntryString = input("Scan Book (<enter> completes): ");
-				if (bookEntryString.length() == 0) 
+				//String BoOk_EnTrY_StRiNg = iNpUt("Scan Book (<enter> completes): ");
+				String bookEntryString = input("Scan Book (<enter> completes): ");// changed variable name
+				//if (BoOk_EnTrY_StRiNg.length() == 0) 
+				if(bookEntryString.length() == 0) {// added code block and changed variable naming conventions
+					//CoNtRoL.SCannING_COMplete();
 					control.scanningComplete();
+				}
 				
 				else {
 					try {
-						int bookId = Integer.valueOf(bookEntryString).intValue();
-						control.bookScanned(bookId);
+						//int BoOk_Id = Integer.valueOf(BoOk_EnTrY_StRiNg).intValue();
+						int bookId = Integer.valueOf(bookEntryString).intValue();// changed variable naming conventions
+						//CoNtRoL.BoOk_ScAnNeD(BoOk_Id);
+						control.bookScanned(bookId);// changed function and variable name. Function name has been changed in Fixbookcontrol.java as well.
 					}
 					catch (NumberFormatException e) {
-						output("Invalid bookId");
+						//OuTpUt("Invalid bookId");
+						output("Invalid bookId");// changed function name
 					}
 				}
 				break;	
 				
 			case FIXING:
-				String answer = input("Fix Book? (Y/N) : ");
-				boolean fix = false;
-				if (answer.toUpperCase().equals("Y")) 
-					fix = true;
+				//String AnS = iNpUt("Fix Book? (Y/N) : ");
+				String answer = input("Fix Book? (Y/N) : ");// changed variable /function name
+				//boolean FiX = false;
+				boolean fix = false;// changed variable name
+				//if (AnS.toUpperCase().equals("Y"))
+				    //FiX = true;
+				if (answer.toUpperCase().equals("Y")) {//changed variable name and also added code block
+                    fix = true;
+				}
+					
 				
-				control.fixBook(fix);
+				//CoNtRoL.FiX_BoOk(FiX);
+				control.fixbook(fix);// changed variable name and function name. Function name is changed in it definition as well.
 				break;
 								
 			case COMPLETED:
-				output("Fixing process complete");
+				//OuTpUt("Fixing process complete");
+				output("Fixing process complete");// changed function name
 				return;
 			
 			default:
-				output("Unhandled state");
-				throw new RuntimeException("FixBookUI : unhandled state :" + StAtE);			
+				//OuTpUt("Unhandled state");
+				output("Unhandled state");// changed function name
+				throw new RuntimeException("FixBookUI : unhandled state :" + state);			
 			
 			}		
 		}
@@ -70,19 +98,24 @@ public class FixBookUI {
 	}
 
 	
-	private String input(String prompt) {
+	//private String iNpUt(String prompt) {
+	private String input(String prompt) {// changed function name
 		System.out.print(prompt);
-		return input.nextLine();
+		//return InPuT.nextLine();
+		return input.nextLine();// change variable name
 	}	
 		
 		
-	private void output(Object object) {
+	//private void OuTpUt(Object object) {
+	private void output(Object object) {// changed function name
 		System.out.println(object);
 	}
 	
 
-	public void display(Object object) {
-		output(object);
+	//public void dIsPlAy(Object object) {
+	public void display(Object object) {// changed function name
+		//OuTpUt(object);
+		output(object);// changed function name
 	}
 	
 	
