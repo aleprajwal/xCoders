@@ -10,11 +10,10 @@ public class Calendar {
 	//private static Calendar sElF;
 	private static Calendar Self; //variable name changed from  sElF to  Self 
 	//private static java.util.Calendar cAlEnDaR;
-	private static java.util.Calendar Calendar;//variable name changed from cAlEnDaR to calendar
+	private static java.util.Calendar Calendar;//cAlEnDaR changes to calendar
 	
          }
-	//private Calendar() {
-	private isCalendar() { //Calendar() changes to isCalendar() to comply with method name rules
+	private Calendar() {
 		//cAlEnDaR = java.util.Calendar.getInstance();
 		Calendar = java.util.Calendar.getInstance();//cAlEnDaR changes to Calendar to comply with the variable names
 	}
