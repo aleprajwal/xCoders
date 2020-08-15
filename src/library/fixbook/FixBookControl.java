@@ -2,6 +2,12 @@ package library.fixbook;
 import library.entities.Book;
 import library.entities.Library;
 
+//Author: Sudhir Thapaliya
+//Mediator: Prajwal Kumar ale
+//Reviewer: Mukesh Kumar
+
+
+
 //public class fIX_bOOK_cONTROL {
 public class FixBookControl {// changed class name and renamed class file as well.
 	
