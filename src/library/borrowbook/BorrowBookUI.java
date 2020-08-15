@@ -31,25 +31,29 @@ public class BorrowBookUI {
 	}
 
 	
-	private String iNpUT(String PrOmPt) {
+//	private String iNpUT(String PrOmPt) {
+	private String getInput(String prompt) { // changed method name iNpUT to getInput and parameter name PromPt to prompt
 		System.out.print(PrOmPt);
 		// return InPuT.nextLine();
 		return input.nextLine();
 	}	
 		
 		
-	private void OuTpUt(Object ObJeCt) {
+	// private void OuTpUt(Object ObJeCt) {
+	private void getOutput(Object object) { // changed method name OuTpUt to getOutput and parameter name ObJeCt to object
 		System.out.println(ObJeCt);
 	}
 	
 			
-	public void SeT_StAtE(uI_STaTe StAtE) {
+	// public void SeT_StAtE(uI_STaTe StAtE) {
+	public void SeT_StAtE(UIState StAtE) { // changed method name SeT_StAtE to setState and parameter uI_STaTe StAtE to UIState state
 		// this.StaTe = StAtE;
 		this.state = StAtE;
 	}
 
 	
-	public void RuN() {
+	// public void RuN() {
+	public void run() { //changed method name RuN to run
 		OuTpUt("Borrow Book Use Case UI\n");
 		
 		while (true) {
@@ -133,7 +137,8 @@ public class BorrowBookUI {
 	}
 
 
-	public void DiSpLaY(Object object) {
+	// public void DiSpLaY(Object object) {
+	public void display(Object object) { // changed method name DiSpLaY to display
 		OuTpUt(object);		
 	}
 
