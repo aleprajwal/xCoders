@@ -24,34 +24,48 @@ public class Calendar {
 		//if (sElF == null) {
 		if (self == null) {  //sElF chsnges to self
 			//sElF = new Calendar();
-			self = new isCalendar();//Calendar() changes to isCalendar() and sElF changes to self
+			self = new isCalendar();//Calendar() changes to isCalendar() and sElF changes to self,11.Singletons MUST return their sole instance through a method called isCalendar() 
 		}
 		return self;
 	}
 	
-	public void incrementDate(int days) {
-		cAlEnDaR.add(java.util.Calendar.DATE, days);		
+	//public void incrementDate(int days) {
+	public void isincrementDate(int days) { //incrementDate changes to isincrementDate
+		//cAlEnDaR.add(java.util.Calendar.DATE, days);
+		Calendar.add(java.util.Calendar.Date, days);	//cAlEnDaR changes to Calendar and DATE changes to date
 	}
 	
-	public synchronized void SeT_DaTe(Date DaTe) {
+	//public synchronized void SeT_DaTe(Date DaTe) {
+	public synchronized void isSetDate(Date DaTe) { //SeT_DaTe(Date DaTe) changes to isSetDate(Date DaTe)
 		try {
-			cAlEnDaR.setTime(DaTe);
-	        cAlEnDaR.set(java.util.Calendar.HOUR_OF_DAY, 0);  
-	        cAlEnDaR.set(java.util.Calendar.MINUTE, 0);  
-	        cAlEnDaR.set(java.util.Calendar.SECOND, 0);  
-	        cAlEnDaR.set(java.util.Calendar.MILLISECOND, 0);
+			//cAlEnDaR.setTime(DaTe);
+			Calendar.setTime(DaTe); //cAlEnDaR changes to calendar
+	      //cAlEnDaR.set(java.util.Calendar.HOUR_OF_DAY, 0);  
+		Calendar.Set(java.util.Calendar.HOUR_OF_DAY, 0);//cAlEnDaR changes to Calendar
+	        //cAlEnDaR.set(java.util.Calendar.MINUTE, 0);  
+		Calendar.Set(java.util.Calendar.MINUTE, 0); 	//cAlEnDaR changes to Calendar
+	       //cAlEnDaR.set(java.util.Calendar.SECOND, 0);  
+		Calendar.Set(java.util.Calendar.SECOND, 0);	//cAlEnDaR changes to Calendar
+	       //cAlEnDaR.set(java.util.Calendar.MILLISECOND, 0);
+		Calendar.Set(java.util.Calendar.MILLISECOND, 0);//cAlEnDaR changes to Calendar
 		}
 		catch (Exception e) {
 			throw new RuntimeException(e);
 		}	
 	}
-	public synchronized Date gEt_DaTe() {
+	//public synchronized Date gEt_DaTe() {
+	public synchronized Date getDate() {//gEt_DaTe() changes to getDate()
 		try {
-	        cAlEnDaR.set(java.util.Calendar.HOUR_OF_DAY, 0);  
-	        cAlEnDaR.set(java.util.Calendar.MINUTE, 0);  
-	        cAlEnDaR.set(java.util.Calendar.SECOND, 0);  
-	        cAlEnDaR.set(java.util.Calendar.MILLISECOND, 0);
-			return cAlEnDaR.getTime();
+	       // cAlEnDaR.set(java.util.Calendar.HOUR_OF_DAY, 0);  
+		Calendar.set(java.util.Calendar.HOUR_OF_DAY, 0);//cAlEnDaR changes to Calendar	
+	        //cAlEnDaR.set(java.util.Calendar.MINUTE, 0); 
+		Calendar.set(java.util.Calendar.MINUTE, 0);//cAlEnDaR changes to Calendar
+	        //cAlEnDaR.set(java.util.Calendar.SECOND, 0);  
+	        Calendar.set(java.util.Calendar.SECOND, 0);//cAlEnDaR changes to Calendar
+		//cAlEnDaR.set(java.util.Calendar.MILLISECOND, 0);
+		Calendar.set(java.util.Calendar.MILLISECOND, 0);//cAlEnDaR changes to Calendar
+			//return cAlEnDaR.getTime();
+			return Calendar.getTime();//cAlEnDaR changes to Calendar
 		}
 		catch (Exception e) {
 			throw new RuntimeException(e);
