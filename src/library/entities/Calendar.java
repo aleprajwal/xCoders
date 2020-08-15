@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 public class Calendar {
 	
 	//private static Calendar sElF;
-	private static calendarSelf; //variable name changed from Calendar sElF to calendarSelf 
+	private static calendar Self; //variable name changed from Calendar sElF to calendar Self 
 	//private static java.util.Calendar cAlEnDaR;
 	private static java.util.Calendar calendar;//variable name changed from cAlEnDaR to calendar
 	
@@ -16,16 +16,17 @@ public class Calendar {
 	//private Calendar() {
 	private isCalendar() { //Calendar() changes to isCalendar()
 		//cAlEnDaR = java.util.Calendar.getInstance();
-		isCalendar = java.util.Calendar.getInstance();//cAlEnDaR changes to isCalendar
+		Calendar = java.util.Calendar.getInstance();//cAlEnDaR changes to Calendar
 	}
 	
 	//public static Calendar gEtInStAnCe() {
-	public static getCalendarInstance() {	//Calendar gEtInStAnCe() changes to getCalendarInstance()
-		if (sElF == null) {
+	public static Calendar getInstance() {	//Calendar gEtInStAnCe() changes to Calendar getInstance()
+		//if (sElF == null) {
+		if (self == null) {  //sElF chsnges to self
 			//sElF = new Calendar();
-			sElF = new isCalendar();//Calendar() changes to isCalendar()
+			self = new isCalendar();//Calendar() changes to isCalendar() and sElF changes to self
 		}
-		return sElF;
+		return self;
 	}
 	
 	public void incrementDate(int days) {
