@@ -32,7 +32,7 @@ public class BorrowBookUI {
 
 	
 //	private String iNpUT(String PrOmPt) {
-	private String getInput(String prompt) { // changed method name iNpUT to getInput and parameter name PromPt to prompt
+	private String input(String prompt) { // changed method name iNpUT to input and parameter name PromPt to prompt
 		System.out.print(PrOmPt);
 		// return InPuT.nextLine();
 		return input.nextLine();
@@ -40,13 +40,13 @@ public class BorrowBookUI {
 		
 		
 	// private void OuTpUt(Object ObJeCt) {
-	private void getOutput(Object object) { // changed method name OuTpUt to getOutput and parameter name ObJeCt to object
+	private void output(Object object) { // changed method name OuTpUt to output and parameter name ObJeCt to object
 		System.out.println(ObJeCt);
 	}
 	
 			
 	// public void SeT_StAtE(uI_STaTe StAtE) {
-	public void SeT_StAtE(UIState StAtE) { // changed method name SeT_StAtE to setState and parameter uI_STaTe StAtE to UIState state
+	public void setState(UIState state) { // changed method name SeT_StAtE to setState and parameter uI_STaTe StAtE to UIState state
 		// this.StaTe = StAtE;
 		this.state = StAtE;
 	}
