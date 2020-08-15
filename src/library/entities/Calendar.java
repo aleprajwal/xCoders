@@ -73,13 +73,17 @@ public class Calendar {
 	}
 
 	public synchronized Date gEt_DuE_DaTe(int loanPeriod) {
+	//public synchronized Date getDueDate(int loanPeriod) {//gEt_DuE_DaTe changes to getDueDate
 		//Date nOw = gEt_DaTe();
-		dateNow = getDate();//variable name  Date nOw changed to datenow,method name gEt_DaTe(); changed to getDate();
-		cAlEnDaR.add(java.util.Calendar.DATE, loanPeriod);
+		Date now = getDate();//variable name  Date nOw changed to Date now,method name gEt_DaTe(); changed to getDate();
+		//cAlEnDaR.add(java.util.Calendar.DATE, loanPeriod);
+		Calendar.add(java.util.Calendar.Date, loanPeriod);//cAlEnDaR changes to Calendar and java.util.Calendar.DATE changes to java.util.Calendar.Date
 		//Date dUeDaTe = cAlEnDaR.getTime();
-		dateDueDate = calendar.getTime();//variable name Date dUeDaTe changed to dateDueDate,method name cAlEnDaR.getTime(); changed to calendar.getTime();
-		cAlEnDaR.setTime(nOw);
-		return dUeDaTe;
+		Date dueDate = Calendar.getTime();//variable name Date dUeDaTe changed to Date dueDate,method name cAlEnDaR.getTime(); changed to Calendar.getTime();
+		//cAlEnDaR.setTime(nOw);
+		Calendar.setTime(now);//cAlEnDaR,nOw changes to Calendar,now respectively
+		//return dUeDaTe;
+		return dUeDate;//dUeDaTe changes to dUeDate
 	}
 	
 	public synchronized long GeT_DaYs_DiFfErEnCe(Date targetDate) {
