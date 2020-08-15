@@ -33,7 +33,8 @@ public class BorrowBookUI {
 	
 //	private String iNpUT(String PrOmPt) {
 	private String input(String prompt) { // changed method name iNpUT to input and parameter name PromPt to prompt
-		System.out.print(PrOmPt);
+		// System.out.print(PrOmPt);
+		System.out.print(prompt); 
 		// return InPuT.nextLine();
 		return input.nextLine();
 	}	
@@ -41,20 +42,23 @@ public class BorrowBookUI {
 		
 	// private void OuTpUt(Object ObJeCt) {
 	private void output(Object object) { // changed method name OuTpUt to output and parameter name ObJeCt to object
-		System.out.println(ObJeCt);
+		// System.out.println(ObJeCt);
+		System.out.println(object);
 	}
 	
 			
 	// public void SeT_StAtE(uI_STaTe StAtE) {
 	public void setState(UIState state) { // changed method name SeT_StAtE to setState and parameter uI_STaTe StAtE to UIState state
 		// this.StaTe = StAtE;
-		this.state = StAtE;
+		// this.state = StAtE;
+		this.state = state;
 	}
 
 	
 	// public void RuN() {
 	public void run() { //changed method name RuN to run
-		OuTpUt("Borrow Book Use Case UI\n");
+		// OuTpUt("Borrow Book Use Case UI\n");
+		output("Borrow Book Use Case UI\n");
 		
 		while (true) {
 			
@@ -62,74 +66,91 @@ public class BorrowBookUI {
 			switch (state) {			
 			
 			case CANCELLED:
-				OuTpUt("Borrowing Cancelled");
+				// OuTpUt("Borrowing Cancelled");
+				output("Borrowing Cancelled");
 				return;
 
 				
 			case READY:
-				String MEM_STR = iNpUT("Swipe member card (press <enter> to cancel): ");
-				if (MEM_STR.length() == 0) {
+				// String MEM_STR = iNpUT("Swipe member card (press <enter> to cancel): ");
+				String memStr = input("Swipe member card (press <enter> to cancel): "); //changed variable MEM_STR to memStr
+				// if (MEM_STR.length() == 0) {
+				if (memStr.length() == 0) {
 					// CoNtRoL.CaNcEl();
 					control.CaNcEl();
 					break;
 				}
 				try {
-					int MeMbEr_Id = Integer.valueOf(MEM_STR).intValue();
+					// int MeMbEr_Id = Integer.valueOf(MEM_STR).intValue();
+					int memberID = Integer.valueOf(memStr).intValue(); // changed variable name MeMbEr_Id to memberID
 					// CoNtRoL.SwIpEd(MeMbEr_Id);
-					control.SwIpEd(MeMbEr_Id);
+					// control.SwIpEd(MeMbEr_Id);
+					control.SwIpEd(memberID;
 				}
 				catch (NumberFormatException e) {
-					OuTpUt("Invalid Member Id");
+					// OuTpUt("Invalid Member Id");
+					output("Invalid Member Id");
 				}
 				break;
 
 				
 			case RESTRICTED:
-				iNpUT("Press <any key> to cancel");
+				// iNpUT("Press <any key> to cancel");
+				input("Press <any key> to cancel");
 				// CoNtRoL.CaNcEl();
 				control.CaNcEl();
 				break;
 			
 				
 			case SCANNING:
-				String BoOk_StRiNg_InPuT = iNpUT("Scan Book (<enter> completes): ");
-				if (BoOk_StRiNg_InPuT.length() == 0) {
+				// String BoOk_StRiNg_InPuT = iNpUT("Scan Book (<enter> completes): ");
+				String bookStringInput = input("Scan Book (<enter> completes): "); // changed variable name BoOk_StRiNg_InPuT to bookStringInput
+				// if (BoOk_StRiNg_InPuT.length() == 0) {
+				if (bookStringInput.length() == 0) {
 					// CoNtRoL.CoMpLeTe();
 					control.CoMpLeTe();
 					break;
 				}
 				try {
-					int BiD = Integer.valueOf(BoOk_StRiNg_InPuT).intValue();
+					// int BiD = Integer.valueOf(BoOk_StRiNg_InPuT).intValue();
+					int bookID = Integer.valueOf(bookStringInput).intValue(); // changed variable name BiD to bookID
 					// CoNtRoL.ScAnNeD(BiD);
-					control.ScAnNeD(BiD);
+					// control.ScAnNeD(BiD);
+					control.ScAnNeD(bookID);
 					
 				} catch (NumberFormatException e) {
-					OuTpUt("Invalid Book Id");
+					// OuTpUt("Invalid Book Id");
+					output("Invalid Book Id");
 				} 
 				break;
 					
 				
 			case FINALISING:
-				String AnS = iNpUT("Commit loans? (Y/N): ");
-				if (AnS.toUpperCase().equals("N")) {
+				// String AnS = iNpUT("Commit loans? (Y/N): ");
+				String answer = input("Commit loans? (Y/N): "); // changed variable name AnS to answer
+				// if (AnS.toUpperCase().equals("N")) {
+				if (answer.toUpperCase().equals("N")) {
 					// CoNtRoL.CaNcEl();
 					control.CaNcEl();
 					
 				} else {
 					// CoNtRoL.CoMmIt_LoAnS();
 					control.CoMmIt_LoAnS();
-					iNpUT("Press <any key> to complete ");
+					// iNpUT("Press <any key> to complete ");
+					input("Press <any key> to complete ");
 				}
 				break;
 				
 				
 			case COMPLETED:
-				OuTpUt("Borrowing Completed");
+				// OuTpUt("Borrowing Completed");
+				output("Borrowing Completed");
 				return;
 	
 				
 			default:
-				OuTpUt("Unhandled state");
+				// OuTpUt("Unhandled state");
+				output("Unhandled state");
 				// throw new RuntimeException("BorrowBookUI : unhandled state :" + StaTe);
 				throw new RuntimeException("BorrowBookUI : unhandled state :" + state;			
 			}
@@ -139,7 +160,8 @@ public class BorrowBookUI {
 
 	// public void DiSpLaY(Object object) {
 	public void display(Object object) { // changed method name DiSpLaY to display
-		OuTpUt(object);		
+		// OuTpUt(object);
+		output(object);		
 	}
 
 
