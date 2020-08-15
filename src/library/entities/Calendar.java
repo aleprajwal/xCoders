@@ -8,21 +8,21 @@ import java.util.concurrent.TimeUnit;
 public class Calendar {
 	
 	//private static Calendar sElF;
-	private static calendar Self; //variable name changed from Calendar sElF to calendar Self 
+	private static Calendar Self; //variable name changed from  sElF to  Self 
 	//private static java.util.Calendar cAlEnDaR;
-	private static java.util.Calendar calendar;//variable name changed from cAlEnDaR to calendar
+	private static java.util.Calendar Calendar;//variable name changed from cAlEnDaR to calendar
 	
-	
+         }
 	//private Calendar() {
-	private isCalendar() { //Calendar() changes to isCalendar()
+	private isCalendar() { //Calendar() changes to isCalendar() to comply with method name rules
 		//cAlEnDaR = java.util.Calendar.getInstance();
-		Calendar = java.util.Calendar.getInstance();//cAlEnDaR changes to Calendar
+		Calendar = java.util.Calendar.getInstance();//cAlEnDaR changes to Calendar to comply with the variable names
 	}
 	
 	//public static Calendar gEtInStAnCe() {
 	public static Calendar getInstance() {	//Calendar gEtInStAnCe() changes to Calendar getInstance()
 		//if (sElF == null) {
-		if (self == null) {  //sElF chsnges to self
+		if (self == null) {  //sElF chsnges to self to comply with variable names
 			//sElF = new Calendar();
 			self = new isCalendar();//Calendar() changes to isCalendar() and sElF changes to self,11.Singletons MUST return their sole instance through a method called isCalendar() 
 		}
@@ -30,13 +30,13 @@ public class Calendar {
 	}
 	
 	//public void incrementDate(int days) {
-	public void isincrementDate(int days) { //incrementDate changes to isincrementDate
+	public void isincrementDate(int days) { //incrementDate changes to isincrementDate to comply with the method name rules
 		//cAlEnDaR.add(java.util.Calendar.DATE, days);
-		Calendar.add(java.util.Calendar.Date, days);	//cAlEnDaR changes to Calendar and DATE changes to date
+		Calendar.add(java.util.Calendar.Date, days);	//cAlEnDaR changes to Calendar and DATE changes to date to comply with the method name rules
 	}
 	
 	//public synchronized void SeT_DaTe(Date DaTe) {
-	public synchronized void isSetDate(Date DaTe) { //SeT_DaTe(Date DaTe) changes to isSetDate(Date DaTe)
+	public synchronized void isSetDate(Date DaTe) { //SeT_DaTe(Date DaTe) changes to isSetDate(Date DaTe) to comply with method name rules
 		try {
 			//cAlEnDaR.setTime(DaTe);
 			Calendar.setTime(DaTe); //cAlEnDaR changes to calendar
@@ -73,7 +73,7 @@ public class Calendar {
 	}
 
 	public synchronized Date gEt_DuE_DaTe(int loanPeriod) {
-	//public synchronized Date getDueDate(int loanPeriod) {//gEt_DuE_DaTe changes to getDueDate
+	//public synchronized Date getDueDate(int loanPeriod) {//gEt_DuE_DaTe changes to getDueDate to comply with method names
 		//Date nOw = gEt_DaTe();
 		Date now = getDate();//variable name  Date nOw changed to Date now,method name gEt_DaTe(); changed to getDate();
 		//cAlEnDaR.add(java.util.Calendar.DATE, loanPeriod);
