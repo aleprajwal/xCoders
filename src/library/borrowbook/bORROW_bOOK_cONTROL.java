@@ -7,22 +7,34 @@ import library.entities.Library;
 import library.entities.Loan;
 import library.entities.Member;
 
-public class bORROW_bOOK_cONTROL {
+// Author: Prajwal Kumar Ale
+// Mediator: Sudhir Thapaliya
+// Reviewer: Saujan Thapa
+
+// public class bORROW_bOOK_cONTROL {
+public class BorrowBookControl { //changed class name bORROW_bOOK_cONTROL to BorrowBookControl
+
 	
-	private BorrowBookUI uI;
+//	private BorrowBookUI uI;
+	private BorrowBookUI ui; // changed variable name uI to ui
 	
-	private Library lIbRaRy;
-	private Member mEmBeR;
-	private enum CONTROL_STATE { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
-	private CONTROL_STATE sTaTe;
-	
+//	private Library lIbRaRy;
+	private Library library; // changed variable name lIbRaRy to library
+//	private Member mEmBeR;
+	private Member member; // changed variable name mEmBeR to member
+//	private enum CONTROL_STATE { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
+	private enum ControlState { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED }; // changed variable name CONTROL_STATE to ControlState
+//	private CONTROL_STATE sTaTe;
+	private CONTROL_STATE state; // changed variable name sTaTe to state
 	private List<Book> pEnDiNg_LiSt;
 	private List<Loan> cOmPlEtEd_LiSt;
-	private Book bOoK;
+//	private Book bOoK;
+	private Book book; // changed variable name bOoK to book
 	
 	
 	public bORROW_bOOK_cONTROL() {
-		this.lIbRaRy = Library.GeTiNsTaNcE();
+//		this.lIbRaRy = Library.GeTiNsTaNcE();
+		this.library = Library.GeTiNsTaNcE();
 		sTaTe = CONTROL_STATE.INITIALISED;
 	}
 	
