@@ -26,36 +26,43 @@ public class BorrowBookControl { //changed class name bORROW_bOOK_cONTROL to Bor
 	private enum ControlState { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED }; // changed variable name CONTROL_STATE to ControlState
 //	private CONTROL_STATE sTaTe;
 	private CONTROL_STATE state; // changed variable name sTaTe to state
-	private List<Book> pEnDiNg_LiSt;
-	private List<Loan> cOmPlEtEd_LiSt;
-//	private Book bOoK;
+//	private List<Book> pEnDiNg_LiSt;
+	private List<Book> pendingList; // changed variable name pEnDiNg_LiSt to pendingList
+//	private List<Loan> cOmPlEtEd_LiSt;
+	private List<Loan> completedList; // changed variable name cOmPlEtEd_LiSt to completedList
+	//	private Book bOoK;
 	private Book book; // changed variable name bOoK to book
 	
 	
 	public bORROW_bOOK_cONTROL() {
 //		this.lIbRaRy = Library.GeTiNsTaNcE();
 		this.library = Library.GeTiNsTaNcE();
-		sTaTe = CONTROL_STATE.INITIALISED;
+		// sTaTe = CONTROL_STATE.INITIALISED;
+		state = ControlState.INITIALISED; // changed variable name sTaTe to state and CONTROL_STATE to ControlState
 	}
 	
 
 	public void SeT_Ui(BorrowBookUI Ui) {
-		if (!sTaTe.equals(CONTROL_STATE.INITIALISED)) 
+		// if (!sTaTe.equals(CONTROL_STATE.INITIALISED))
+		if (!state.equals(CONTROL_STATE.INITIALISED)) { //changed sTaTe to state and added {} to if statement  
 			throw new RuntimeException("BorrowBookControl: cannot call setUI except in INITIALISED state");
-			
+	    }	
 		this.uI = Ui;
 		Ui.SeT_StAtE(BorrowBookUI.uI_STaTe.READY);
-		sTaTe = CONTROL_STATE.READY;		
+		// sTaTe = CONTROL_STATE.READY;
+		state = CONTROL_STATE.READY; // changed sTaTe to state		
 	}
 
 		
 	public void SwIpEd(int mEmBeR_Id) {
-		if (!sTaTe.equals(CONTROL_STATE.READY)) 
+		// if (!sTaTe.equals(CONTROL_STATE.READY))
+		if (!state.equals(CONTROL_STATE.READY)) { // changed sTaTe to state and added {} to if statement
 			throw new RuntimeException("BorrowBookControl: cannot call cardSwiped except in READY state");
-			
+		}
 		mEmBeR = lIbRaRy.gEt_MeMbEr(mEmBeR_Id);
 		if (mEmBeR == null) {
-			uI.DiSpLaY("Invalid memberId");
+			// uI.DiSpLaY("Invalid memberId");
+			ui.DiSpLaY("Invalid memberId"); // changed uI to ui
 			return;
 		}
 		if (lIbRaRy.cAn_MeMbEr_BoRrOw(mEmBeR)) {
@@ -104,7 +111,8 @@ public class BorrowBookControl { //changed class name bORROW_bOOK_cONTROL to Bor
 			for (Book bOoK : pEnDiNg_LiSt) 
 				uI.DiSpLaY(bOoK.toString());
 			
-			cOmPlEtEd_LiSt = new ArrayList<Loan>();
+			// cOmPlEtEd_LiSt = new ArrayList<Loan>();
+			completedList = new ArrayList<Loan>(); //changed variable name to completedList
 			uI.SeT_StAtE(BorrowBookUI.uI_STaTe.FINALISING);
 			sTaTe = CONTROL_STATE.FINALISING;
 		}
