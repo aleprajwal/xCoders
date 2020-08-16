@@ -133,18 +133,25 @@ public class BorrowBookControl { //changed class name bORROW_bOOK_cONTROL to Bor
 	
 	// public void CoMpLeTe() {
 	public void complete() { // changed method name CoMpLeTe to complete
-		if (pEnDiNg_LiSt.size() == 0) 
-			CaNcEl();
-		
+		// if (pEnDiNg_LiSt.size() == 0) 
+		if (pendingList.size() == 0) { // changed pEnDiNg_LiSt to pendingList and scope {} for if statement
+			// CaNcEl();
+			cancel(); // changed method CaNcEl to cancel
+		}
 		else {
-			uI.DiSpLaY("\nFinal Borrowing List");
-			for (Book bOoK : pEnDiNg_LiSt) 
-				uI.DiSpLaY(bOoK.toString());
-			
+			// uI.DiSpLaY("\nFinal Borrowing List");
+			ui.display("\nFinal Borrowing List")
+			// for (Book bOoK : pEnDiNg_LiSt)
+			for (Book book : pendingList) { // changed object bOok to book and pEnDiNg_LiSt to pendingList
+				// uI.DiSpLaY(bOoK.toString());
+				ui.display(book.toString());
+			}
 			// cOmPlEtEd_LiSt = new ArrayList<Loan>();
 			completedList = new ArrayList<Loan>(); //changed variable name to completedList
-			uI.SeT_StAtE(BorrowBookUI.uI_STaTe.FINALISING);
-			sTaTe = CONTROL_STATE.FINALISING;
+			// uI.SeT_StAtE(BorrowBookUI.uI_STaTe.FINALISING);
+			ui.setState(BorrowBookUI.UIState.FINALISING); // SeT_StAtE to setState and uI_STaTe to UIState [BorrowBookUI.java]
+			// sTaTe = CONTROL_STATE.FINALISING;
+			state = ControlState.FINALISING;
 		}
 	}
 
