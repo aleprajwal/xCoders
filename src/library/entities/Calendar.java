@@ -23,7 +23,7 @@ public class Calendar {
 	//if (sElF == null) {
 	if (self == null) {  //sElF chsnges to self to comply with variable names
 	    //sElF = new Calendar();
-	    self = new calendar();//Calendar() changes to calendar() and sElF changes to self,11.Singletons MUST return their sole instance through a method called isCalendar() 
+	    self = new Calendar();//Calendar() changes to calendar() and sElF changes to self,11.Singletons MUST return their sole instance through a method called isCalendar() 
 	                    }
 		return self;
 	}
@@ -31,7 +31,7 @@ public class Calendar {
 	//public void incrementDate(int days) {
 	public void isincrementDate(int days) { //incrementDate changes to isincrementDate to comply with the method name rules
 		//cAlEnDaR.add(java.util.Calendar.DATE, days);
-		calendar.add(java.util.Calendar.date, days);	//cAlEnDaR changes to calendar and DATE changes to date to comply with the method name rules
+		calendar.add(java.util.Calendar.Date, days);	//cAlEnDaR changes to calendar and DATE changes to date to comply with the method name rules
 	}
 	
 	//public synchronized void SeT_DaTe(Date DaTe) {
