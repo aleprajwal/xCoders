@@ -156,27 +156,38 @@ public class BorrowBookControl { //changed class name bORROW_bOOK_cONTROL to Bor
 	}
 
 
-	public void CoMmIt_LoAnS() {
-		if (!sTaTe.equals(CONTROL_STATE.FINALISING)) 
+	// public void CoMmIt_LoAnS() {
+	public void commitLoans() { // changed method name CoMmIt_LoAnS to commitLoans 
+		// if (!sTaTe.equals(CONTROL_STATE.FINALISING)) 
+		if (!state.equals(ControlState.FINALISING)){ // added scope {} to if statement 
 			throw new RuntimeException("BorrowBookControl: cannot call commitLoans except in FINALISING state");
-			
-		for (Book B : pEnDiNg_LiSt) {
-			Loan lOaN = lIbRaRy.iSsUe_LoAn(B, mEmBeR);
-			cOmPlEtEd_LiSt.add(lOaN);			
 		}
-		uI.DiSpLaY("Completed Loan Slip");
-		for (Loan LOAN : cOmPlEtEd_LiSt) 
-			uI.DiSpLaY(LOAN.toString());
-		
-		uI.SeT_StAtE(BorrowBookUI.uI_STaTe.COMPLETED);
-		sTaTe = CONTROL_STATE.COMPLETED;
+		// for (Book B : pEnDiNg_LiSt) {
+		for (Book book : pendingList) { // object B to book and pEnDiNg_LiSt to pendingList
+			// Loan lOaN = lIbRaRy.iSsUe_LoAn(B, mEmBeR);
+			Loan loan = library.iSsUe_LoAn(book, member);
+			// cOmPlEtEd_LiSt.add(lOaN);
+			completedList.add(loan);		
+		}
+		// uI.DiSpLaY("Completed Loan Slip");
+		ui.display("Completed Loan Slip");
+		// for (Loan LOAN : cOmPlEtEd_LiSt)
+		for (Loan loan : completedList){  
+			// uI.DiSpLaY(LOAN.toString());
+			ui.display(loan.toString());
+		}
+		// uI.SeT_StAtE(BorrowBookUI.uI_STaTe.COMPLETED);
+		ui.setState(BorrowBookUI.UIState.COMPLETED);
+		// sTaTe = CONTROL_STATE.COMPLETED;
+		state = ControlState.COMPLETED;
 	}
 
 	
-	public void CaNcEl() {
-		uI.SeT_StAtE(BorrowBookUI.uI_STaTe.CANCELLED);
-		sTaTe = CONTROL_STATE.CANCELLED;
-	}
-	
-	
+	// public void CaNcEl() {
+	public void cancel() { // changed method name CaNcEl to cancel 
+		// uI.SeT_StAtE(BorrowBookUI.uI_STaTe.CANCELLED);
+		ui.setState(BorrowBookUI.UIState.CANCELLED);
+		// sTaTe = CONTROL_STATE.CANCELLED;
+		state = ControlState.CANCELLED;
+	}	
 }
