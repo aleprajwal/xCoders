@@ -90,32 +90,49 @@ public class BorrowBookControl { //changed class name bORROW_bOOK_cONTROL to Bor
 	}
 	
 	
-	public void ScAnNeD(int bOoKiD) {
-		bOoK = null;
-		if (!sTaTe.equals(CONTROL_STATE.SCANNING)) 
+	// public void ScAnNeD(int bOoKiD) {
+	public void scanned(int bookID) { // changed method name ScAnNeD to scanned and variable name bOoKiD to bookID
+		// bOoK = null;
+		book = null; // changed variable bOoK to book
+		// if (!sTaTe.equals(CONTROL_STATE.SCANNING))
+		if (!state.equals(ControlState.SCANNING)){ // changed sTaTe to state, CONTROL_STATE to ControlState and added scope {} in if statement
 			throw new RuntimeException("BorrowBookControl: cannot call bookScanned except in SCANNING state");
-			
-		bOoK = lIbRaRy.gEt_BoOk(bOoKiD);
-		if (bOoK == null) {
-			uI.DiSpLaY("Invalid bookId");
+		}
+		// bOoK = lIbRaRy.gEt_BoOk(bOoKiD);
+		book = library.gEt_BoOk(bookID);
+		// if (bOoK == null) {
+		if (book == null) {
+			// uI.DiSpLaY("Invalid bookId");
+			ui.display("Invalid bookId"); // changed method DiSpLaY to display[BorrowBookUI.java]
 			return;
 		}
-		if (!bOoK.iS_AvAiLaBlE()) {
-			uI.DiSpLaY("Book cannot be borrowed");
+		// if (!bOoK.iS_AvAiLaBlE()) {
+		if (!book.iS_AvAiLaBlE()) {
+			// uI.DiSpLaY("Book cannot be borrowed");
+			ui.display("Book cannot be borrowed"); // changed method DiSpLaY to display[BorrowBookUI.java]
 			return;
 		}
-		pEnDiNg_LiSt.add(bOoK);
-		for (Book B : pEnDiNg_LiSt) 
-			uI.DiSpLaY(B.toString());
-		
-		if (lIbRaRy.gEt_NuMbEr_Of_LoAnS_ReMaInInG_FoR_MeMbEr(mEmBeR) - pEnDiNg_LiSt.size() == 0) {
-			uI.DiSpLaY("Loan limit reached");
-			CoMpLeTe();
+		// pEnDiNg_LiSt.add(bOoK);
+		pendingList.add(book); // changed pEnDiNg_LiSt to pendingList
+		// for (Book B : pEnDiNg_LiSt)
+		for (Book b: pendingList){ //changed Book object B to b, pEnDiNg_LiSt to pendingList and added scope {}
+			// uI.DiSpLaY(B.toString());
+			ui.display(b.toString());
+		}
+		// if (lIbRaRy.gEt_NuMbEr_Of_LoAnS_ReMaInInG_FoR_MeMbEr(mEmBeR) - pEnDiNg_LiSt.size() == 0) {
+		remainingLoans = library.gEt_NuMbEr_Of_LoAnS_ReMaInInG_FoR_MeMbEr(member) // breaking down parameter passed in if condition
+		pendingSize = pendingList.size()
+		if (remainingLoans - pendingSize == 0) {
+			// uI.DiSpLaY("Loan limit reached");
+			ui.display("Loan limit reached");
+			// CoMpLeTe();
+			complete();
 		}
 	}
 	
 	
-	public void CoMpLeTe() {
+	// public void CoMpLeTe() {
+	public void complete() { // changed method name CoMpLeTe to complete
 		if (pEnDiNg_LiSt.size() == 0) 
 			CaNcEl();
 		
