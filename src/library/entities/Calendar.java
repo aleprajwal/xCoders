@@ -13,13 +13,13 @@ public class Calendar {
 	private static java.util.Calendar calendar;//cAlEnDaR changes to calendar
 	
          }
-	private calendar() {
+	private Calendar() {
 		//cAlEnDaR = java.util.Calendar.getInstance();
 		calendar = java.util.Calendar.getInstance();//cAlEnDaR changes to calendar to comply with the variable names
 	}
 	
 	//public static Calendar gEtInStAnCe() {
-	public static calendar getInstance() {	//Calendar gEtInStAnCe() changes to calendar getInstance()
+	public static Calendar getInstance() {	//Calendar gEtInStAnCe() changes to calendar getInstance()
 	//if (sElF == null) {
 	if (self == null) {  //sElF chsnges to self to comply with variable names
 	    //sElF = new Calendar();
@@ -71,8 +71,8 @@ public class Calendar {
 		}	
 	}
 
-	public synchronized Date gEt_DuE_DaTe(int loanPeriod) {
-	//public synchronized Date getDueDate(int loanPeriod) {//gEt_DuE_DaTe changes to getDueDate to comply with method names
+	//public synchronized Date gEt_DuE_DaTe(int loanPeriod) {
+	public synchronized Date getDueDate(int loanPeriod) {//gEt_DuE_DaTe changes to getDueDate to comply with method names
 		//Date nOw = gEt_DaTe();
 		Date now = getDate();//variable name  Date nOw changed to Date now,method name gEt_DaTe(); changed to getDate();
 		//cAlEnDaR.add(java.util.Calendar.DATE, loanPeriod);
