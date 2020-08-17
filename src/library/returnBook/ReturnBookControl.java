@@ -47,7 +47,8 @@ public class ReturnBookControl {	// changed class name rETURN_bOOK_cONTROL to Re
 		if (!state.equals(ControlState.READY))		// changed sTaTe to state and enum cOnTrOl_sTaTe to ControlState
 			throw new RuntimeException("ReturnBookControl: cannot call bookScanned except in READY state");
 		
-		Book cUrReNt_bOoK = lIbRaRy.gEt_BoOk(bOoK_iD);
+		//Book cUrReNt_bOoK = lIbRaRy.gEt_BoOk(bOoK_iD);
+		Book cUrReNt_bOoK = library.gEt_BoOk(bookID);	// changed variable cUrReNt_bOoK to currentBook and lIbRaRy to library, bOoK_iD to bookID
 		
 		if (cUrReNt_bOoK == null) {
 			Ui.DiSpLaY("Invalid Book Id");
