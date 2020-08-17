@@ -70,7 +70,8 @@ public class ReturnBookControl {	// changed class name rETURN_bOOK_cONTROL to Re
 
 		//CurrENT_loan = lIbRaRy.GeT_LoAn_By_BoOkId(bOoK_iD);
 		currentLoan = library.GeT_LoAn_By_BoOkId(bookID);	// changed variable CurrENT_loan to currentLoan, lIbRaRy to library and parameter variable bOoK_iD to bookID
-		double Over_Due_Fine = 0.0;
+		//double Over_Due_Fine = 0.0;
+		double overDueFine = 0.0;		// changed variable name Over_Due_Fine to overDueFine
 		if (CurrENT_loan.Is_OvEr_DuE()) 
 			Over_Due_Fine = lIbRaRy.CaLcUlAtE_OvEr_DuE_FiNe(CurrENT_loan);
 		
