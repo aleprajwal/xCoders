@@ -22,7 +22,7 @@ public class ReturnBookControl {	// changed class name rETURN_bOOK_cONTROL to Re
 	public rETURN_bOOK_cONTROL() {
 		this.lIbRaRy = Library.GeTiNsTaNcE();
 		//sTaTe = cOnTrOl_sTaTe.INITIALISED;
-		sTaTe = ControlState.INITIALISED;	//changed variable sTaTe to state and cOnTrOl_sTaTe to 
+		sTaTe = ControlState.INITIALISED;	//changed variable sTaTe to state and cOnTrOl_sTaTe to
 	}
 	
 	
@@ -41,7 +41,8 @@ public class ReturnBookControl {	// changed class name rETURN_bOOK_cONTROL to Re
 	}
 
 
-	public void bOoK_sCaNnEd(int bOoK_iD) {
+	//public void bOoK_sCaNnEd(int bOoK_iD) {
+	public void bookScanned(int bookID) {		// changed function name bOoK_sCaNnEd to bookScanned and parameter variable bOoK_iD to bookID
 		if (!sTaTe.equals(cOnTrOl_sTaTe.READY)) 
 			throw new RuntimeException("ReturnBookControl: cannot call bookScanned except in READY state");
 		
