@@ -3,6 +3,10 @@ import library.entities.Book;
 import library.entities.Library;
 import library.entities.Loan;
 
+// Author: Saujan Thapa
+// Mediator: Mukesh Kumar
+// Reviewer: Prajwal Kumar Ale
+
 //public class rETURN_bOOK_cONTROL {
 public class ReturnBookControl {	// changed class name rETURN_bOOK_cONTROL to ReturnBookControl
 
