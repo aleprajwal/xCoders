@@ -72,8 +72,10 @@ public class ReturnBookControl {	// changed class name rETURN_bOOK_cONTROL to Re
 		currentLoan = library.GeT_LoAn_By_BoOkId(bookID);	// changed variable CurrENT_loan to currentLoan, lIbRaRy to library and parameter variable bOoK_iD to bookID
 		//double Over_Due_Fine = 0.0;
 		double overDueFine = 0.0;		// changed variable name Over_Due_Fine to overDueFine
-		if (CurrENT_loan.Is_OvEr_DuE()) 
-			Over_Due_Fine = lIbRaRy.CaLcUlAtE_OvEr_DuE_FiNe(CurrENT_loan);
+		/*if (CurrENT_loan.Is_OvEr_DuE())
+			Over_Due_Fine = lIbRaRy.CaLcUlAtE_OvEr_DuE_FiNe(CurrENT_loan);*/
+		if (currentLoan.Is_OvEr_DuE())	// changed CurrENT_loan to currentLoan
+			overDueFine = library.CaLcUlAtE_OvEr_DuE_FiNe(currentLoan);	// changed Over_Due_Fine to overDueFine and lIbRaRy to library and also argument CurrENT_loan to currentLoan
 		
 		Ui.DiSpLaY("Inspecting");
 		Ui.DiSpLaY(cUrReNt_bOoK.toString());
