@@ -27,7 +27,7 @@ public class ReturnBookControl {	// changed class name rETURN_bOOK_cONTROL to Re
 	
 	
 	//public void sEt_uI(ReturnBookUI uI) {
-	public void setUI(ReturnBookUI ui) {	// changed function name and parameter name
+	public void setUI(ReturnBookUI ui) {	// changed function name and parameter variable name
 		//if (!sTaTe.equals(cOnTrOl_sTaTe.INITIALISED))
 		if (!state.equals(ControlState.INITIALISED))	// changed variable sTaTe to state and enum cOnTrOl_sTaTe to ControlState
 			throw new RuntimeException("ReturnBookControl: cannot call setUI except in INITIALISED state");
@@ -43,7 +43,8 @@ public class ReturnBookControl {	// changed class name rETURN_bOOK_cONTROL to Re
 
 	//public void bOoK_sCaNnEd(int bOoK_iD) {
 	public void bookScanned(int bookID) {		// changed function name bOoK_sCaNnEd to bookScanned and parameter variable bOoK_iD to bookID
-		if (!sTaTe.equals(cOnTrOl_sTaTe.READY)) 
+		//if (!sTaTe.equals(cOnTrOl_sTaTe.READY))
+		if (!state.equals(ControlState.READY))		// changed sTaTe to state and enum cOnTrOl_sTaTe to ControlState
 			throw new RuntimeException("ReturnBookControl: cannot call bookScanned except in READY state");
 		
 		Book cUrReNt_bOoK = lIbRaRy.gEt_BoOk(bOoK_iD);
