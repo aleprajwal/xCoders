@@ -48,12 +48,17 @@ public class ReturnBookControl {	// changed class name rETURN_bOOK_cONTROL to Re
 			throw new RuntimeException("ReturnBookControl: cannot call bookScanned except in READY state");
 		
 		//Book cUrReNt_bOoK = lIbRaRy.gEt_BoOk(bOoK_iD);
-		Book cUrReNt_bOoK = library.gEt_BoOk(bookID);	// changed variable cUrReNt_bOoK to currentBook and lIbRaRy to library, bOoK_iD to bookID
+		Book currentBook = library.gEt_BoOk(bookID);	// changed variable cUrReNt_bOoK to currentBook and lIbRaRy to library, bOoK_iD to bookID
 		
-		if (cUrReNt_bOoK == null) {
-			Ui.DiSpLaY("Invalid Book Id");
+		//if (cUrReNt_bOoK == null) {
+			//Ui.DiSpLaY("Invalid Book Id");
+			//return;
+		//}
+		if (currentBook == null) {	// changed cUrReNt_bOoK to currentBook
+			ui.DiSpLaY("Invalid Book Id");	// changed Ui to ui
 			return;
 		}
+
 		if (!cUrReNt_bOoK.iS_On_LoAn()) {
 			Ui.DiSpLaY("Book has not been borrowed");
 			return;
