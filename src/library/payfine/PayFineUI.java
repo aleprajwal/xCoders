@@ -12,18 +12,20 @@ public class PayFineUI {
 	private pAY_fINE_cONTROL control;
 	private Scanner input;
 	//private uI_sTaTe StAtE;
-	private uI_sTaTe state;
+	private UIState state;
 
 	
 	public PayFineUI(pAY_fINE_cONTROL control) {
 		this.CoNtRoL = control;
 		input = new Scanner(System.in);
-		StAtE = uI_sTaTe.INITIALISED;
+		//StAtE = uI_sTaTe.INITIALISED;
+		StAtE = UIState.INITIALISED;
 		control.SeT_uI(this);
 	}
 	
 	
-	public void SeT_StAtE(uI_sTaTe state) {
+	//public void SeT_StAtE(uI_sTaTe state) {
+	public void SeT_StAtE(UIState state) {
 		this.StAtE = state;
 	}
 
