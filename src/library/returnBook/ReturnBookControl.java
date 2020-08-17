@@ -88,8 +88,10 @@ public class ReturnBookControl {	// changed class name rETURN_bOOK_cONTROL to Re
 		ui.DiSpLaY(currentBook.toString());	// changed Ui to ui and cUrReNt_bOoK to currentBook
 		ui.DiSpLaY(currentLoan.toString());	// changed Ui to ui and CurrENT_loan to currentLoan
 		
-		if (CurrENT_loan.Is_OvEr_DuE()) 
-			Ui.DiSpLaY(String.format("\nOverdue fine : $%.2f", Over_Due_Fine));
+		/*if (CurrENT_loan.Is_OvEr_DuE())
+			Ui.DiSpLaY(String.format("\nOverdue fine : $%.2f", Over_Due_Fine));*/
+		if (currentLoan.Is_OvEr_DuE())	// changed CurrENT_loan to currentLoan
+			ui.DiSpLaY(String.format("\nOverdue fine : $%.2f", overDueFine));	// changed variable Ui to ui and Over_Due_Fine to overDueFine
 		
 		Ui.sEt_sTaTe(ReturnBookUI.uI_sTaTe.INSPECTING);
 		sTaTe = cOnTrOl_sTaTe.INSPECTING;		
