@@ -7,9 +7,11 @@ public class PayFineUI {
 
 	public static enum uI_sTaTe { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };
 
-	private pAY_fINE_cONTROL CoNtRoL;
+	//private pAY_fINE_cONTROL CoNtRoL;
+	private pAY_fINE_cONTROL control;
 	private Scanner input;
-	private uI_sTaTe StAtE;
+	//private uI_sTaTe StAtE;
+	private uI_sTaTe state;
 
 	
 	public PayFineUI(pAY_fINE_cONTROL control) {
