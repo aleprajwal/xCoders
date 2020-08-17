@@ -50,19 +50,24 @@ public class ReturnBookControl {	// changed class name rETURN_bOOK_cONTROL to Re
 		//Book cUrReNt_bOoK = lIbRaRy.gEt_BoOk(bOoK_iD);
 		Book currentBook = library.gEt_BoOk(bookID);	// changed variable cUrReNt_bOoK to currentBook and lIbRaRy to library, bOoK_iD to bookID
 		
-		//if (cUrReNt_bOoK == null) {
-			//Ui.DiSpLaY("Invalid Book Id");
-			//return;
-		//}
+		/*if (cUrReNt_bOoK == null) {
+			Ui.DiSpLaY("Invalid Book Id");
+			return;
+		}*/
 		if (currentBook == null) {	// changed cUrReNt_bOoK to currentBook
 			ui.DiSpLaY("Invalid Book Id");	// changed Ui to ui
 			return;
 		}
 
-		if (!cUrReNt_bOoK.iS_On_LoAn()) {
+		/*if (!cUrReNt_bOoK.iS_On_LoAn()) {
 			Ui.DiSpLaY("Book has not been borrowed");
 			return;
-		}		
+		}*/
+		if (!currentBook.iS_On_LoAn()) {	// changed variable name cUrReNt_bOoK to currentBook but its method is not changed because Book class has not been refactored yet
+			ui.DiSpLaY("Book has not been borrowed");	// changed Ui to ui
+			return;
+		}
+		
 		CurrENT_loan = lIbRaRy.GeT_LoAn_By_BoOkId(bOoK_iD);	
 		double Over_Due_Fine = 0.0;
 		if (CurrENT_loan.Is_OvEr_DuE()) 
