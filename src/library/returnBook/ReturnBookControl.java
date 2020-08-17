@@ -81,9 +81,12 @@ public class ReturnBookControl {	// changed class name rETURN_bOOK_cONTROL to Re
 		if (currentLoan.Is_OvEr_DuE())	// changed CurrENT_loan to currentLoan
 			overDueFine = library.CaLcUlAtE_OvEr_DuE_FiNe(currentLoan);	// changed Over_Due_Fine to overDueFine and lIbRaRy to library and also argument CurrENT_loan to currentLoan
 		
-		Ui.DiSpLaY("Inspecting");
+		/*Ui.DiSpLaY("Inspecting");
 		Ui.DiSpLaY(cUrReNt_bOoK.toString());
-		Ui.DiSpLaY(CurrENT_loan.toString());
+		Ui.DiSpLaY(CurrENT_loan.toString());*/
+		ui.DiSpLaY("Inspecting");	// changed variable Ui to ui
+		ui.DiSpLaY(currentBook.toString());	// changed Ui to ui and cUrReNt_bOoK to currentBook
+		ui.DiSpLaY(currentLoan.toString());	// changed Ui to ui and CurrENT_loan to currentLoan
 		
 		if (CurrENT_loan.Is_OvEr_DuE()) 
 			Ui.DiSpLaY(String.format("\nOverdue fine : $%.2f", Over_Due_Fine));
