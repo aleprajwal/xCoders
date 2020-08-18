@@ -93,8 +93,10 @@ public class ReturnBookControl {	// changed class name rETURN_bOOK_cONTROL to Re
 		if (currentLoan.Is_OvEr_DuE())	// changed CurrENT_loan to currentLoan
 			ui.DiSpLaY(String.format("\nOverdue fine : $%.2f", overDueFine));	// changed variable Ui to ui and Over_Due_Fine to overDueFine
 		
-		Ui.sEt_sTaTe(ReturnBookUI.uI_sTaTe.INSPECTING);
-		sTaTe = cOnTrOl_sTaTe.INSPECTING;		
+		/*Ui.sEt_sTaTe(ReturnBookUI.uI_sTaTe.INSPECTING);
+		sTaTe = cOnTrOl_sTaTe.INSPECTING;*/
+		Ui.sEt_sTaTe(ReturnBookUI.uI_sTaTe.INSPECTING);		// changed Ui to ui
+		state = ControlState.INSPECTING;	// changed sTaTe to state and enum cOnTrOl_sTaTe to ControlState
 	}
 
 
