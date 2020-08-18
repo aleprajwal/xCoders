@@ -63,8 +63,10 @@ public class PayFineUI {
 			case PAYING:
 				//double AmouNT = 0;
 				double amount = 0;
-				String Amt_Str = input("Enter amount (<Enter> cancels) : ");
-				if (Amt_Str.length() == 0) {
+				//String Amt_Str = input("Enter amount (<Enter> cancels) : ");
+				String amtStr = input("Enter amount (<Enter> cancels) : ");
+				//if (Amt_Str.length() == 0) {
+				if (amtStr.length() == 0) {
 					//CoNtRoL.CaNcEl();
 					control.CaNcEl();
 					break;
