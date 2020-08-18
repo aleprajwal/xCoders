@@ -73,7 +73,7 @@ public class PayFineUI {
 				}
 				try {
 					//AmouNT = Double.valueOf(Amt_Str).doubleValue();
-					amount = Double.valueOf(Amt_Str).doubleValue();
+					amount = Double.valueOf(amtStr).doubleValue();
 				}
 				catch (NumberFormatException e) {}
 				//if (AmouNT <= 0) {
