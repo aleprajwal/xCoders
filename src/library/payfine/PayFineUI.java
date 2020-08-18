@@ -41,16 +41,19 @@ public class PayFineUI {
 			switch (StAtE) {
 			
 			case READY:
-				String Mem_Str = input("Swipe member card (press <enter> to cancel): ");
-				if (Mem_Str.length() == 0) {
+				//String Mem_Str = input("Swipe member card (press <enter> to cancel): ");
+				String memStr = input("Swipe member card (press <enter> to cancel): ");
+				//if (Mem_Str.length() == 0) {
+				if (memStr.length() == 0) {
 					//CoNtRoL.CaNcEl();
 					control.CaNcEl();
 					break;
 				}
 				try {
-					int Member_ID = Integer.valueOf(Mem_Str).intValue();
+					//int Member_ID = Integer.valueOf(Mem_Str).intValue();
+					int memberId = Integer.valueOf(memStr).intValue();
 					//CoNtRoL.CaRd_sWiPeD(Member_ID);
-					control.CaRd_sWiPeD(Member_ID);
+					control.CaRd_sWiPeD(memberId);
 				}
 				catch (NumberFormatException e) {
 					output("Invalid memberId");
