@@ -16,17 +16,20 @@ public class PayFineUI {
 
 	
 	public PayFineUI(pAY_fINE_cONTROL control) {
-		this.CoNtRoL = control;
+		//this.CoNtRoL = control;
+		this.control = control;
+
 		input = new Scanner(System.in);
 		//StAtE = uI_sTaTe.INITIALISED;
-		StAtE = UIState.INITIALISED;
+		state = UIState.INITIALISED;
 		control.SeT_uI(this);
 	}
 	
 	
 	//public void SeT_StAtE(uI_sTaTe state) {
 	public void SeT_StAtE(UIState state) {
-		this.StAtE = state;
+		//this.StAtE = state;
+		this.state = state;
 	}
 
 
@@ -40,12 +43,14 @@ public class PayFineUI {
 			case READY:
 				String Mem_Str = input("Swipe member card (press <enter> to cancel): ");
 				if (Mem_Str.length() == 0) {
-					CoNtRoL.CaNcEl();
+					//CoNtRoL.CaNcEl();
+					control.CaNcEl();
 					break;
 				}
 				try {
 					int Member_ID = Integer.valueOf(Mem_Str).intValue();
-					CoNtRoL.CaRd_sWiPeD(Member_ID);
+					//CoNtRoL.CaRd_sWiPeD(Member_ID);
+					control.CaRd_sWiPeD(Member_ID);
 				}
 				catch (NumberFormatException e) {
 					output("Invalid memberId");
@@ -56,7 +61,8 @@ public class PayFineUI {
 				double AmouNT = 0;
 				String Amt_Str = input("Enter amount (<Enter> cancels) : ");
 				if (Amt_Str.length() == 0) {
-					CoNtRoL.CaNcEl();
+					//CoNtRoL.CaNcEl();
+					control.CaNcEl();
 					break;
 				}
 				try {
