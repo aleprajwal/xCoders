@@ -100,11 +100,17 @@ public class ReturnBookControl {	// changed class name rETURN_bOOK_cONTROL to Re
 	}
 
 
-	public void sCaNnInG_cOmPlEtE() {
+	/*public void sCaNnInG_cOmPlEtE() {
 		if (!sTaTe.equals(cOnTrOl_sTaTe.READY)) 
 			throw new RuntimeException("ReturnBookControl: cannot call scanningComplete except in READY state");
 			
 		Ui.sEt_sTaTe(ReturnBookUI.uI_sTaTe.COMPLETED);		
+	}*/
+	public void scanningComplete() {	// changed function name sCaNnInG_cOmPlEtE to scanningComplete
+		if (!state.equals(ControlState.READY))		// cOnTrOl_sTaTe to ControlState
+			throw new RuntimeException("ReturnBookControl: cannot call scanningComplete except in READY state");
+
+		ui.sEt_sTaTe(ReturnBookUI.uI_sTaTe.COMPLETED);	// changed Ui to ui
 	}
 
 
