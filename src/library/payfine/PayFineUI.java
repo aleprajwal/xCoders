@@ -99,7 +99,8 @@ public class PayFineUI {
 			
 			default:
 				output("Unhandled state");
-				throw new RuntimeException("FixBookUI : unhandled state :" + StAtE);			
+				//throw new RuntimeException("FixBookUI : unhandled state :" + StAtE);		
+				throw new RuntimeException("FixBookUI : unhandled state :" + state);// changed variable name			
 			
 			}		
 		}		
@@ -118,7 +119,7 @@ public class PayFineUI {
 			
 
 	//public void DiSplAY(Object object) {
-	public void display(Object object) {
+	public void display(Object object) {// changed method name
 		output(object);
 	}
 
