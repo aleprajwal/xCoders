@@ -9,11 +9,16 @@ public class Loan implements Serializable {
 // 	public static enum lOaN_sTaTe { CURRENT, OVER_DUE, DISCHARGED };
 	public static enum LoanState { CURRENT, OVER_DUE, DISCHARGED }; // changed name from lOaN_sTaTe to LoanState
 	
-	private int LoAn_Id;
-	private Book BoOk;
-	private Member MeMbEr;
-	private Date DaTe;
-	private lOaN_sTaTe StAtE;
+//	private int LoAn_Id;
+	private int loanID; // changed variable name LoAn_Id to loanID
+//	private Book BoOk;
+	private Book book; // changed variable name BoOk to book
+//	private Member MeMbEr;
+	private Member member; // changed variable name MeMbEr to member
+//	private Date DaTe;
+	private Date date; // changed variable name DaTe to date
+//	private lOaN_sTaTe StAtE;
+	private lOaN_sTaTe state; // changed variable name StAtE to state
 
 	
 	public Loan(int loanId, Book bOoK, Member mEmBeR, Date DuE_dAtE) {
