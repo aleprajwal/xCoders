@@ -42,8 +42,8 @@ public class PayFineUI {
 		
 		while (true) {
 			
-			switch (StAtE) {
-			
+			//switch (StAtE) {
+			switch (state) {
 			case READY:
 				//String Mem_Str = input("Swipe member card (press <enter> to cancel): ");
 				String memStr = input("Swipe member card (press <enter> to cancel): ");
@@ -86,7 +86,7 @@ public class PayFineUI {
 					break;
 				}
 				//CoNtRoL.PaY_FiNe(AmouNT);
-				CoNtRoL.PaY_FiNe(amount);
+				control.PaY_FiNe(amount);
 				break;
 								
 			case CANCELLED:
