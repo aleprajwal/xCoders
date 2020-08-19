@@ -30,23 +30,23 @@ public class PayFineUI {
 	
 	
 	//public void SeT_StAtE(uI_sTaTe state) {
-	public void setState(UIState state) {
+	public void setState(UIState state) {//change methods name and parameters name
 		//this.StAtE = state;
 		this.state = state;
 	}
 
 
 	//public void RuN() {
-	public void run() {
+	public void run() {// changed methods name
 		output("Pay Fine Use Case UI\n");
 		
 		while (true) {
 			
 			//switch (StAtE) {
-			switch (state) {
+			switch (state) {// changed private variable reference name
 			case READY:
 				//String Mem_Str = input("Swipe member card (press <enter> to cancel): ");
-				String memStr = input("Swipe member card (press <enter> to cancel): ");
+				String memStr = input("Swipe member card (press <enter> to cancel): ");// changed local variable name
 				//if (Mem_Str.length() == 0) {
 				if (memStr.length() == 0) {
 					//CoNtRoL.CaNcEl();
@@ -55,7 +55,7 @@ public class PayFineUI {
 				}
 				try {
 					//int Member_ID = Integer.valueOf(Mem_Str).intValue();
-					int memberId = Integer.valueOf(memStr).intValue();
+					int memberId = Integer.valueOf(memStr).intValue();// changed local variable name
 					//CoNtRoL.CaRd_sWiPeD(Member_ID);
 					control.CaRd_sWiPeD(memberId);
 				}
@@ -66,9 +66,9 @@ public class PayFineUI {
 				
 			case PAYING:
 				//double AmouNT = 0;
-				double amount = 0;
+				double amount = 0;// changed local variable name
 				//String Amt_Str = input("Enter amount (<Enter> cancels) : ");
-				String amtStr = input("Enter amount (<Enter> cancels) : ");
+				String amtStr = input("Enter amount (<Enter> cancels) : ");// changed local variable name
 				//if (Amt_Str.length() == 0) {
 				if (amtStr.length() == 0) {
 					//CoNtRoL.CaNcEl();
