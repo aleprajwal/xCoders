@@ -9,22 +9,22 @@ public class PayFineUI {
 
 
 	//public static enum uI_sTaTe { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };
-	public static enum UIState { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };
+	public static enum UIState { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };// Change enum naming convention
 
 	//private pAY_fINE_cONTROL CoNtRoL;
-	private pAY_fINE_cONTROL control;
+	private pAY_fINE_cONTROL control; // changed variable naming conventions
 	private Scanner input;
 	//private uI_sTaTe StAtE;
-	private UIState state;
+	private UIState state;// Changed variable naming convention and Enum reference.
 
 	
 	public PayFineUI(pAY_fINE_cONTROL control) {
 		//this.CoNtRoL = control;
-		this.control = control;
+		this.control = control;// changed varible naming 
 
 		input = new Scanner(System.in);
 		//StAtE = uI_sTaTe.INITIALISED;
-		state = UIState.INITIALISED;
+		state = UIState.INITIALISED;// changed variable naming
 		control.SeT_uI(this);
 	}
 	
