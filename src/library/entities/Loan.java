@@ -21,12 +21,18 @@ public class Loan implements Serializable {
 	private lOaN_sTaTe state; // changed variable name StAtE to state
 
 	
-	public Loan(int loanId, Book bOoK, Member mEmBeR, Date DuE_dAtE) {
-		this.LoAn_Id = loanId;
-		this.BoOk = bOoK;
-		this.MeMbEr = mEmBeR;
-		this.DaTe = DuE_dAtE;
-		this.StAtE = lOaN_sTaTe.CURRENT;
+//	public Loan(int loanId, Book bOoK, Member mEmBeR, Date DuE_dAtE) {
+	public Loan(int loanId, Book book, Member member, Date dueDate) { // changed parameters name
+//		this.LoAn_Id = loanId;
+		this.loanID = loanId;
+//		this.BoOk = bOoK;
+		this.book = book;
+//		this.MeMbEr = mEmBeR;
+		this.member = member;
+//		this.DaTe = DuE_dAtE;
+		this.date = dueDate;
+//		this.StAtE = lOaN_sTaTe.CURRENT;
+		this.state = LoanState.CURRENT;
 	}
 
 	
