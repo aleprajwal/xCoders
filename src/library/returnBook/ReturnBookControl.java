@@ -120,10 +120,14 @@ public class ReturnBookControl {	// changed class name rETURN_bOOK_cONTROL to Re
 		if (!state.equals(ControlState.INSPECTING))	//	changed sTaTe to state and cOnTrOl_sTaTe to ControlState
 			throw new RuntimeException("ReturnBookControl: cannot call dischargeLoan except in INSPECTING state");
 		
-		lIbRaRy.DiScHaRgE_LoAn(CurrENT_loan, iS_dAmAgEd);
-		CurrENT_loan = null;
-		Ui.sEt_sTaTe(ReturnBookUI.uI_sTaTe.READY);
-		sTaTe = cOnTrOl_sTaTe.READY;				
+		//lIbRaRy.DiScHaRgE_LoAn(CurrENT_loan, iS_dAmAgEd);
+		library.DiScHaRgE_LoAn(currentLoan, isDamaged);	// changed lIbRaRy to library, CurrENT_loan to currentLoan and iS_dAmAgEd to isDamaged
+		//CurrENT_loan = null;
+		currentLoan = null;	// changed CurrENT_loan to currentLoan
+		//Ui.sEt_sTaTe(ReturnBookUI.uI_sTaTe.READY);
+		ui.sEt_sTaTe(ReturnBookUI.uI_sTaTe.READY);	// changed Ui to ui
+		//sTaTe = cOnTrOl_sTaTe.READY;
+		sTaTe = ControlState.READY;	// changed sTaTe to state and cOnTrOl_sTaTe to ControlState
 	}
 
 
