@@ -114,8 +114,10 @@ public class ReturnBookControl {	// changed class name rETURN_bOOK_cONTROL to Re
 	}
 
 
-	public void dIsChArGe_lOaN(boolean iS_dAmAgEd) {
-		if (!sTaTe.equals(cOnTrOl_sTaTe.INSPECTING)) 
+	//public void dIsChArGe_lOaN(boolean iS_dAmAgEd) {
+	public void dischargeLoan(boolean isDamaged) {	// changed function name dIsChArGe_lOaN to dischargeLoan and paramter variable iS_dAmAgEd to isDamaged
+		//if (!sTaTe.equals(cOnTrOl_sTaTe.INSPECTING))
+		if (!state.equals(ControlState.INSPECTING))	//	changed sTaTe to state and cOnTrOl_sTaTe to ControlState
 			throw new RuntimeException("ReturnBookControl: cannot call dischargeLoan except in INSPECTING state");
 		
 		lIbRaRy.DiScHaRgE_LoAn(CurrENT_loan, iS_dAmAgEd);
