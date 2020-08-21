@@ -25,7 +25,7 @@ public class BorrowBookControl { //changed class name bORROW_bOOK_cONTROL to Bor
 //    private enum CONTROL_STATE { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
     private enum ControlState { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED }; // changed variable name CONTROL_STATE to ControlState
 //    private CONTROL_STATE sTaTe;
-    private CONTROL_STATE state; // changed variable name sTaTe to state
+    private ControlState state; // changed variable name sTaTe to state
 //    private List<Book> pEnDiNg_LiSt;
     private List<Book> pendingList; // changed variable name pEnDiNg_LiSt to pendingList
 //    private List<Loan> cOmPlEtEd_LiSt;
@@ -54,14 +54,14 @@ public class BorrowBookControl { //changed class name bORROW_bOOK_cONTROL to Bor
 //        Ui.SeT_StAtE(BorrowBookUI.uI_STaTe.READY);
         ui.setState(BorrowBookUI.UIState.READY); // changed variable Ui to ui; SeT_StAtE to setState and uI_STaTe to UIState[BorrowBookUI.java]
         // sTaTe = CONTROL_STATE.READY;
-        state = CONTROL_STATE.READY; // changed sTaTe to state        
+        state = ControlState.READY; // changed sTaTe to state
     }
 
         
 //    public void SwIpEd(int mEmBeR_Id) {
     public void swiped(int memberID) { // changed method name SwIpEd to swiped and variable name mEmBeR_Id to memberID
         // if (!sTaTe.equals(CONTROL_STATE.READY))
-        if (!state.equals(CONTROL_STATE.READY)) { // changed sTaTe to state and added {} to if statement
+        if (!state.equals(ControlState.READY)) { // changed sTaTe to state and added {} to if statement
             throw new RuntimeException("BorrowBookControl: cannot call cardSwiped except in READY state");
         }
 //        mEmBeR = lIbRaRy.gEt_MeMbEr(mEmBeR_Id);
