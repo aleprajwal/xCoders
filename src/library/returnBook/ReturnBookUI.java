@@ -7,9 +7,11 @@ public class ReturnBookUI {
 	//public static enum uI_sTaTe { INITIALISED, READY, INSPECTING, COMPLETED };
 	public static enum UIState { INITIALISED, READY, INSPECTING, COMPLETED };	// Changed enum name uI_sTaTe to UIState
 	//private rETURN_bOOK_cONTROL CoNtRoL;
-	private ReturnBookControl control;	// change rETURN_bOOK_cONTROL to ReturnBookControl and CoNtRol to control
-	private Scanner iNpUt;
-	private uI_sTaTe StATe;
+	private ReturnBookControl control;	// changed rETURN_bOOK_cONTROL to ReturnBookControl and CoNtRol to control
+	//private Scanner iNpUt;
+	private Scanner input;	// changed iNpUt variable to input
+	//private uI_sTaTe StATe;
+	private UIState state;	// changed uI_sTaTe to UIState and StATe to state
 
 	
 	public ReturnBookUI(rETURN_bOOK_cONTROL cOnTrOL) {
