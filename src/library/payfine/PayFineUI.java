@@ -72,21 +72,21 @@ public class PayFineUI {
                 //if (Amt_Str.length() == 0) {
                 if (amtStr.length() == 0) {
                     //CoNtRoL.CaNcEl();
-                    control.CaNcEl();
+                    control.CaNcEl();// changed variable name
                     break;
                 }
                 try {
                     //AmouNT = Double.valueOf(Amt_Str).doubleValue();
-                    amount = Double.valueOf(amtStr).doubleValue();
+                    amount = Double.valueOf(amtStr).doubleValue();//change local variable name
                 }
                 catch (NumberFormatException e) {}
                 //if (AmouNT <= 0) {
-                if (amount <= 0) {
+                if (amount <= 0) {// changed variable name
                     output("Amount must be positive");
                     break;
                 }
                 //CoNtRoL.PaY_FiNe(AmouNT);
-                control.PaY_FiNe(amount);
+                control.PaY_FiNe(amount);// changed variable name
                 break;
                                 
             case CANCELLED:
