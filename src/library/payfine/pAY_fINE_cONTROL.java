@@ -5,7 +5,8 @@ import library.entities.Member;
 public class pAY_fINE_cONTROL {
 	
 	private PayFineUI Ui;
-	private enum cOnTrOl_sTaTe { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };
+	//private enum cOnTrOl_sTaTe { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };
+	private enum ControlState { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };//changed enum name
 	private cOnTrOl_sTaTe StAtE;
 	
 	private Library LiBrArY;
