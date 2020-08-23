@@ -301,27 +301,42 @@ public class Library implements Serializable {
 	}
 
 
-	public void DiScHaRgE_LoAn(Loan cUrReNt_LoAn, boolean iS_dAmAgEd) {
-		Member mEmBeR = cUrReNt_LoAn.GeT_MeMbEr();
-		Book bOoK  = cUrReNt_LoAn.GeT_BoOk();
+	//public void DiScHaRgE_LoAn(Loan cUrReNt_LoAn, boolean iS_dAmAgEd) {
+	public void isDischargeLoan(Loan currentLoan, boolean isDamaged) {	//method and arguments names were fixed
+		//Member mEmBeR = cUrReNt_LoAn.GeT_MeMbEr();
+		Member member = currentLoan.get_member();//whole line of code is fixed
+		//Book bOoK  = cUrReNt_LoAn.GeT_BoOk();
+		Book book  = currentLoan.get_book();//whole line of code is fixed
 		
-		double oVeR_DuE_FiNe = CaLcUlAtE_OvEr_DuE_FiNe(cUrReNt_LoAn);
-		mEmBeR.AdD_FiNe(oVeR_DuE_FiNe);	
+		//double oVeR_DuE_FiNe = CaLcUlAtE_OvEr_DuE_FiNe(cUrReNt_LoAn);
+		double overDueFine = isCalculateOverDueFine(currentLoan);//variable,member name,member argument were fixed
+		//mEmBeR.AdD_FiNe(oVeR_DuE_FiNe);	
+		member.isAddFine(overDueFine);	//mEmBeR.AdD_FiNe(oVeR_DuE_FiNe) changed to member.isAddFine(overDueFine)
 		
-		mEmBeR.dIsChArGeLoAn(cUrReNt_LoAn);
-		bOoK.ReTuRn(iS_dAmAgEd);
-		if (iS_dAmAgEd) {
-			mEmBeR.AdD_FiNe(damageFee);
-			DaMaGeD_BoOkS.put(bOoK.gEtId(), bOoK);
+		//mEmBeR.dIsChArGeLoAn(cUrReNt_LoAn);
+		member.isDischargeLoan(currentLoan);//mEmBeR.dIsChArGeLoAn(cUrReNt_LoAn) changed to member.isDischargeLoan(currentLoan)
+		//bOoK.ReTuRn(iS_dAmAgEd);
+		book.return(isDamaged);//whole line fixed
+		//if (iS_dAmAgEd) {
+		if (isDamaged) {	//iS_dAmAgEd changed to isDamaged
+			//mEmBeR.AdD_FiNe(damageFee);
+			member.isAddFine(DAMAGE_FEE);
+			//DaMaGeD_BoOkS.put(bOoK.gEtId(), bOoK);
+			isDamagedBooks.put(book.get_Id(), book);//whole code of line is changed
 		}
-		cUrReNt_LoAn.DiScHaRgE();
-		CuRrEnT_LoAnS.remove(bOoK.gEtId());
+		//cUrReNt_LoAn.DiScHaRgE();
+		currentLoan.isDischarge();//whole line of code is changed acc to the above declare variable names etc
+		//CuRrEnT_LoAnS.remove(bOoK.gEtId());
+		currentLoans.remove(book.get_Id());//whole line of code is fixed
 	}
 
 
-	public void cHeCk_CuRrEnT_LoAnS() {
-		for (Loan lOaN : CuRrEnT_LoAnS.values()) 
-			lOaN.cHeCk_OvEr_DuE();
+	//public void cHeCk_CuRrEnT_LoAnS() {
+	public void isCheckCurrentLoans() {	//method name is fixed from cHeCk_CuRrEnT_LoAnS to isCheckCurrentLoans
+		//for (Loan lOaN : CuRrEnT_LoAnS.values()) 
+		for (Loan loan : currentLoans.values()) //variable and arguments were fixed	
+			//lOaN.cHeCk_OvEr_DuE();
+		        loan.isCheckOverDue();//method name changed and fixed
 				
 	}
 
