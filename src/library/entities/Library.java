@@ -79,19 +79,25 @@ public class Library implements Serializable {
 		if (self == null) {	//SeLf changed to self
 			//Path PATH = Paths.get(lIbRaRyFiLe);	
 			Path path = Paths.get(LIBRARY_FILE);//variable PATH updated to path ,Also variable used as constant name were updated from lIbRaRyFiLe to LIBRARY_FILE
-			if (Files.exists(PATH)) {	
-				
-				try (ObjectInputStream LiBrArY_FiLe = new ObjectInputStream(new FileInputStream(lIbRaRyFiLe));) {
+			//if (Files.exists(PATH)) {	
+			if (Files.exists(path)) {//PATH changed to path	
+				//try (ObjectInputStream LiBrArY_FiLe = new ObjectInputStream(new FileInputStream(lIbRaRyFiLe));) {
+				try (ObjectInputStream libraryFILE = new ObjectInputStream(new FileInputStream(LIBRARY_FILE));) {//new variable, static final variable name were updated
+	
 			    
-					SeLf = (Library) LiBrArY_FiLe.readObject();
-					Calendar.gEtInStAnCe().SeT_DaTe(SeLf.lOaN_DaTe);
-					LiBrArY_FiLe.close();
+					//SeLf = (Library) LiBrArY_FiLe.readObject();
+					self = (Library) libraryFILE.readObject();//SeLf and LiBrArY_FiLe changed to self and libraryFILE respectively
+					//Calendar.gEtInStAnCe().SeT_DaTe(SeLf.lOaN_DaTe);
+					Calendar.isGetInstance().setDate(self.loanDATE);//gEtInStAnCe().SeT_DaTe(SeLf.lOaN_DaTe) changed to setDate(self.loanDATE)
+					//LiBrArY_FiLe.close();
+					libraryFILE.close();// LiBrArY_FiLe changed to libraryFILE
 				}
 				catch (Exception e) {
 					throw new RuntimeException(e);
 				}
 			}
-			else SeLf = new Library();
+			//else SeLf = new Library();
+			else self = new Library();//SeLf changed to self
 		}
 		return SeLf;
 	}
