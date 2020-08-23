@@ -17,12 +17,18 @@ import java.util.Map;
 @SuppressWarnings("serial")
 public class Library implements Serializable {
 	
-	private static final String lIbRaRyFiLe = "library.obj";
-	private static final int lOaNlImIt = 2;
-	private static final int loanPeriod = 2;
-	private static final double FiNe_PeR_DaY = 1.0;
-	private static final double maxFinesOwed = 1.0;
-	private static final double damageFee = 2.0;
+	//private static final String lIbRaRyFiLe = "library.obj";
+	private static final String LIBRARY_FILE = "library.obj";//Name of the constant variable lIbRaRyFiLe changed to LIBRARY_FILE 
+	//private static final int lOaNlImIt = 2;
+	private static final int LOAN_LIMIT = 2;//Name of the constant variable lOaNlImIt changed to LOAN_LIMIT
+	//private static final int loanPeriod = 2;
+	private static final int LOAN_PERIOD = 2;//Name of the constant variable loanPeriod changed to LOAN_PERIOD
+	//private static final double FiNe_PeR_DaY = 1.0;
+	private static final double FINE_PER_DAY = 1.0;//Name of the constant variable FiNe_PeR_DaY changed to FINE_PER_DAY
+	//private static final double maxFinesOwed = 1.0;
+	private static final double MAX_FINES_OWED = 1.0;//Name of the constant variable maxFinesOwed changed to MAX_FINES_OWED
+	//private static final double damageFee = 2.0;
+	private static final double DAMAGE_FEE = 2.0;//Name of the constant variable damageFee changed to DAMAGE_FEE
 	
 	private static Library SeLf;
 	private int bOoK_Id;
