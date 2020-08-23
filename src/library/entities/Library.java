@@ -226,21 +226,26 @@ public class Library implements Serializable {
 	//public int gEt_LoAn_LiMiT() {
 	public int get_loanLimit() {	//gEt_LoAn_LiMiT changed to get_loanLimit
 		//return lOaNlImIt;
-		return loanLimit//lOaNlImIt changed to loanLimit
+		return LOAN_LIMIT//lOaNlImIt changed to LOAN_LIMIT
 	}
 
 	
-	public boolean cAn_MeMbEr_BoRrOw(Member member) {		
-		if (member.gEt_nUmBeR_Of_CuRrEnT_LoAnS() == lOaNlImIt ) 
-			return false;
+	//public boolean cAn_MeMbEr_BoRrOw(Member member) {
+	public boolean isCanMemberBorrow(Member member) {	//cAn_MeMbEr_BoRrOw changed to isCanMemberBorrow
+		//if (member.gEt_nUmBeR_Of_CuRrEnT_LoAnS() == lOaNlImIt ) {
+		if (member.get_numberOfCurrentLoans() == LOAN_LIMIT ) {	//gEt_nUmBeR_Of_CuRrEnT_LoAnS,lOaNlImIt changed to get_numberOfCurrentLoans,LOAN_LIMIT respectively
+			return false;}
 				
-		if (member.FiNeS_OwEd() >= maxFinesOwed) 
-			return false;
+		//if (member.FiNeS_OwEd() >= maxFinesOwed) {
+		if (member.FinesOwed() >= MAX_FINES_OWED) {	//FiNeS_OwEd,maxFinesOwed changed to FinesOwed,MAX_FINES_OWED respectively.
+			return false;}
 				
-		for (Loan loan : member.GeT_LoAnS()) 
-			if (loan.Is_OvEr_DuE()) 
-				return false;
-			
+		//for (Loan loan : member.GeT_LoAnS()) {
+		for (Loan loan : member.get_loans()) {//	GeT_LoAnS changed to get_loans
+			//if (loan.Is_OvEr_DuE()) {
+			if (loan.isOverDue()) {	//Is_OvEr_DuE changed to isOverDue
+				return false;}
+		}
 		return true;
 	}
 
