@@ -53,15 +53,23 @@ public class Library implements Serializable {
 	private Map<Integer, Book> damagedBOOKS;//variable name updated from DaMaGeD_BoOkS to damagedBOOKS
 	
 
-	private Library() {
-		CaTaLoG = new HashMap<>();
-		MeMbErS = new HashMap<>();
-		LoAnS = new HashMap<>();
-		CuRrEnT_LoAnS = new HashMap<>();
-		DaMaGeD_BoOkS = new HashMap<>();
-		bOoK_Id = 1;
-		mEmBeR_Id = 1;		
-		lOaN_Id = 1;		
+	private Library() { //function name remains same as class name is Library and this is constructor so, if we change this we need to update class name as well
+		//CaTaLoG = new HashMap<>();
+		catalog = new HashMap<>();//variable name CaTaLoG changed to catalog
+		//MeMbErS = new HashMap<>();
+		members = new HashMap<>();//Variable name MeMbErs were updated to members
+		//LoAnS = new HashMap<>();
+		loans = new HashMap<>();//variable name LoAnS updated to loans
+		//CuRrEnT_LoAnS = new HashMap<>();
+		currentLOANS = new HashMap<>();//variable name CuRrEnT_LoAnS updated to currentLOANS
+		//DaMaGeD_BoOkS = new HashMap<>();
+		damagedBOOKS = new HashMap<>();//variable name DaMaGeD_BoOkS updated to damagedBOOKS
+		//bOoK_Id = 1;
+		bookID = 1;//variable name bOoK_Id changed to bookID
+		//mEmBeR_Id = 1;	
+		memberID = 1;//variable name mEmBeR_Id changed to memberID
+		//lOaN_Id = 1;	
+		loanID = 1;//variable name lOaN_Id changed to loanID
 	}
 
 	
