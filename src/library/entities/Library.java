@@ -250,8 +250,10 @@ public class Library implements Serializable {
 	}
 
 	
-	public int gEt_NuMbEr_Of_LoAnS_ReMaInInG_FoR_MeMbEr(Member MeMbEr) {		
-		return lOaNlImIt - MeMbEr.gEt_nUmBeR_Of_CuRrEnT_LoAnS();
+	//public int gEt_NuMbEr_Of_LoAnS_ReMaInInG_FoR_MeMbEr(Member MeMbEr) {
+	public int get_NumberOfLoansRemainingForMember(Member member) {	//gEt_NuMbEr_Of_LoAnS_ReMaInInG_FoR_MeMbEr,MeMbEr changed to get_NumberOfLoansRemainingForMember,member respectively
+		//return lOaNlImIt - MeMbEr.gEt_nUmBeR_Of_CuRrEnT_LoAnS();
+		return LOAN_LIMIT - member.get_numberOfCurrentLoans();//lOaNlImIt changed to LOAN_LIMIT.Also MeMbEr.gEt_nUmBeR_Of_CuRrEnT_LoAnS() changed to get_numberOfCurrentLoans
 	}
 
 	
