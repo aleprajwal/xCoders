@@ -183,23 +183,32 @@ public class Library implements Serializable {
 	}
 
 
-	public Member aDd_MeMbEr(String lastName, String firstName, String email, int phoneNo) {		
-		Member member = new Member(lastName, firstName, email, phoneNo, gEt_NeXt_MeMbEr_Id());
-		MeMbErS.put(member.GeT_ID(), member);		
+	//public Member aDd_MeMbEr(String lastName, String firstName, String email, int phoneNo) {
+	public Member isAddMember(String lastName, String firstName, String email, int phoneNo) {	//aDd_MeMbEr changed to isAddMember
+		//Member member = new Member(lastName, firstName, email, phoneNo, gEt_NeXt_MeMbEr_Id());
+		Member member = new Member(lastName, firstName, email, phoneNo, get_next_memberID());//gEt_NeXt_MeMbEr_Id changed to  get_next_memberID
+		//MeMbErS.put(member.GeT_ID(), member);
+		members.put(member.get_ID(), member);	//	MeMbErS changed to members
 		return member;
 	}
 
 	
-	public Book aDd_BoOk(String a, String t, String c) {		
-		Book b = new Book(a, t, c, gEt_NeXt_BoOk_Id());
-		CaTaLoG.put(b.gEtId(), b);		
+	//public Book aDd_BoOk(String a, String t, String c) {
+	public Book isAddBook(String a, String t, String c) {	//aDd_BoOk changed to isAddBook
+		//Book b = new Book(a, t, c, gEt_NeXt_BoOk_Id());
+		Book b = new Book(a, t, c, get_next_bookID());//gEt_NeXt_BoOk_Id changed to get_next_bookID 
+		//CaTaLoG.put(b.gEtId(), b);
+		catalog.put(b.get_ID(), b);//CaTaLoG,gEtId changed to catalog,get_ID respectively
 		return b;
 	}
 
 	
-	public Member gEt_MeMbEr(int memberId) {
-		if (MeMbErS.containsKey(memberId)) 
-			return MeMbErS.get(memberId);
+	//public Member gEt_MeMbEr(int memberId) {
+	public Member get_member(int memberId) {//gEt_MeMbEr changed to get_member	
+		//if (MeMbErS.containsKey(memberId)) 
+		if (members.containsKey(memberId))	{//MeMbErS changed to members
+			//return MeMbErS.get(memberId);
+			return members.get(memberId);}//indentation and member name if fixed
 		return null;
 	}
 
