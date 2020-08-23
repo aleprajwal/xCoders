@@ -30,11 +30,16 @@ public class Library implements Serializable {
 	//private static final double damageFee = 2.0;
 	private static final double DAMAGE_FEE = 2.0;//Name of the constant variable damageFee changed to DAMAGE_FEE
 	
-	private static Library SeLf;
-	private int bOoK_Id;
-	private int mEmBeR_Id;
-	private int lOaN_Id;
-	private Date lOaN_DaTe;
+	//private static Library SeLf;
+	private static Library self;// variable name updated from SeLf to self
+	//private int bOoK_Id;
+	private int bookId;// variable name updated from bOoK_Id to bookId
+	//private int mEmBeR_Id;
+	private int memberID;//varibale name updated from mEmBeR_Id to memberID
+	//private int lOaN_Id;
+	private int loanID;//variable name updated from lOaN_Id to loanID
+	//private Date lOaN_DaTe;
+	private Date loanDATE;//variable name updated from lOaN_DaTe to loanDATE
 	
 	private Map<Integer, Book> CaTaLoG;
 	private Map<Integer, Member> MeMbErS;
