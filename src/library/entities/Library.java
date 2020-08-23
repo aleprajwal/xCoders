@@ -268,26 +268,34 @@ public class Library implements Serializable {
 		//book.BoRrOw();
 	        book.borrow();//BoRrOw changes to borrow
 		//LoAnS.put(loan.GeT_Id(), loan);
-		Loans.put(loan.Get_Id(), loan);//LoAnS changes to Loans
+		Loans.put(loan.get_Id(), loan);//LoAnS changes to Loans
 		//CuRrEnT_LoAnS.put(book.gEtId(), loan);
-		currentLoans.put(book.Get_ID(), loan);//CuRrEnT_LoAnS,gEtId changes to currentLoans,Get_ID respectively.
+		currentLoans.put(book.get_Id(), loan);//CuRrEnT_LoAnS,gEtId changes to currentLoans,Get_ID respectively.
 		return loan;
 	}
 	
 	
-	public Loan GeT_LoAn_By_BoOkId(int bookId) {
-		if (CuRrEnT_LoAnS.containsKey(bookId)) 
-			return CuRrEnT_LoAnS.get(bookId);
+	//public Loan GeT_LoAn_By_BoOkId(int bookId) {
+	public Loan get_LoanByBookId(int bookId) {	//GeT_LoAn_By_BoOkId changes to get_LoanByBookId
+		//if (CuRrEnT_LoAnS.containsKey(bookId)) {
+		if (isCurrentLoans.isContainsKey(bookID)) {	//whole line is changed
+			//return CuRrEnT_LoAnS.get(bookId);}
+		        return isCurrentLoans.get(bookID);}//WHole line changed and indentation were corrected.
 		
 		return null;
 	}
 
 	
-	public double CaLcUlAtE_OvEr_DuE_FiNe(Loan LoAn) {
-		if (LoAn.Is_OvEr_DuE()) {
-			long DaYs_OvEr_DuE = Calendar.gEtInStAnCe().GeT_DaYs_DiFfErEnCe(LoAn.GeT_DuE_DaTe());
-			double fInE = DaYs_OvEr_DuE * FiNe_PeR_DaY;
-			return fInE;
+	//public double CaLcUlAtE_OvEr_DuE_FiNe(Loan LoAn) {
+	public double isCalculateOverDueFine(Loan loan) {// CaLcUlAtE_OvEr_DuE_FiNe(Loan LoAn)  changed to  isCalculateOverDueFine(Loan loan)	
+		//if (LoAn.Is_OvEr_DuE()) {
+		if (LoAn.isOverDue()) {	//Is_OvEr_DuE changes to isOverDue
+			//long DaYs_OvEr_DuE = Calendar.gEtInStAnCe().GeT_DaYs_DiFfErEnCe(LoAn.GeT_DuE_DaTe());
+			long isDaysOverDue = Calendar.isGetInstance().get_DaysDifference(loan.get_DueDate());//every method name is changed to comply with the guidelines.except in get underscore remains throughout the whole program
+			//double fInE = DaYs_OvEr_DuE * FiNe_PeR_DaY;
+			double fine = daysOverDue * FINE_PER_DAY;//variable name fInE changed to fine .also other variable names were changed including constant variables
+			//return fInE;
+			return fine;//fInE changes to fine
 		}
 		return 0.0;		
 	}
