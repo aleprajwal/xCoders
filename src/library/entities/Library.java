@@ -88,7 +88,7 @@ public class Library implements Serializable {
 					//SeLf = (Library) LiBrArY_FiLe.readObject();
 					self = (Library) libraryFILE.readObject();//SeLf and LiBrArY_FiLe changed to self and libraryFILE respectively
 					//Calendar.gEtInStAnCe().SeT_DaTe(SeLf.lOaN_DaTe);
-					Calendar.isGetInstance().setDate(self.loanDATE);//gEtInStAnCe().SeT_DaTe(SeLf.lOaN_DaTe) changed to setDate(self.loanDATE)
+					Calendar.isGetInstance().set_Date(self.loanDATE);//gEtInStAnCe().SeT_DaTe(SeLf.lOaN_DaTe) changed to set_Date(self.loanDATE)
 					//LiBrArY_FiLe.close();
 					libraryFILE.close();// LiBrArY_FiLe changed to libraryFILE
 				}
@@ -109,7 +109,7 @@ public class Library implements Serializable {
 		//if (SeLf != null) {
 		if (self != null) {// SeLf changed to self	
 			//SeLf.lOaN_DaTe = Calendar.gEtInStAnCe().gEt_DaTe();
-			self.loanDATE = Calendar.isGetInstance().getDate();//whole line changed which include variable name,method name.Also method name gEt_DaTe changed to getDate(here verb is not used in front of method name)
+			self.loanDATE = Calendar.isGetInstance().get_Date();//whole line changed which include variable name,method name.Also method name gEt_DaTe changed to get_Date(here verb is not used in front of method name)
 			//try (ObjectOutputStream LiBrArY_fIlE = new ObjectOutputStream(new FileOutputStream(lIbRaRyFiLe));) {
 			try (ObjectInputStream libraryFILE = new ObjectInputStream(new FileInputStream(LIBRARY_FILE));) {	////new variable, static final variable name were updated
 				//LiBrArY_fIlE.writeObject(SeLf);
@@ -126,18 +126,24 @@ public class Library implements Serializable {
 	}
 
 	
-	public int gEt_BoOkId() {
-		return bOoK_Id;
+	//public int gEt_BoOkId() {
+	public int get_bookId() {	//Method name gEt_BoOkId changed to get_bookId(function name underscore were not changed because it will change the getter function and it wont work)
+		//return bOoK_Id;
+		return bookId;//bOoK_Id changed to bookId
 	}
 	
 	
 	public int gEt_MeMbEr_Id() {
-		return mEmBeR_Id;
+	//public int get_memberID() { gEt_MeMbEr_Id changed to get_memberID
+		//return mEmBeR_Id;
+		return memberID;//mEmBeR_Id changed to memberID
 	}
 	
 	
 	private int gEt_NeXt_BoOk_Id() {
-		return bOoK_Id++;
+	//private int get_next_bookID() {gEt_NeXt_BoOk_Id changed to get_next_bookID
+		//return bOoK_Id++;
+		return bookID++;
 	}
 
 	
