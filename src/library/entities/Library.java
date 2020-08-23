@@ -99,17 +99,25 @@ public class Library implements Serializable {
 			//else SeLf = new Library();
 			else self = new Library();//SeLf changed to self
 		}
-		return SeLf;
+		//return SeLf;
+		return self;//SeLf changed to self 
 	}
 
 	
-	public static synchronized void SaVe() {
-		if (SeLf != null) {
-			SeLf.lOaN_DaTe = Calendar.gEtInStAnCe().gEt_DaTe();
-			try (ObjectOutputStream LiBrArY_fIlE = new ObjectOutputStream(new FileOutputStream(lIbRaRyFiLe));) {
-				LiBrArY_fIlE.writeObject(SeLf);
-				LiBrArY_fIlE.flush();
-				LiBrArY_fIlE.close();	
+	//public static synchronized void SaVe() {
+	public static synchronized void isSave() {	//Method name updated from SaVe to isSave
+		//if (SeLf != null) {
+		if (self != null) {// SeLf changed to self	
+			//SeLf.lOaN_DaTe = Calendar.gEtInStAnCe().gEt_DaTe();
+			self.loanDATE = Calendar.isGetInstance().getDate();//whole line changed which include variable name,method name.Also method name gEt_DaTe changed to getDate(here verb is not used in front of method name)
+			//try (ObjectOutputStream LiBrArY_fIlE = new ObjectOutputStream(new FileOutputStream(lIbRaRyFiLe));) {
+			try (ObjectInputStream libraryFILE = new ObjectInputStream(new FileInputStream(LIBRARY_FILE));) {	////new variable, static final variable name were updated
+				//LiBrArY_fIlE.writeObject(SeLf);
+				libraryFILE.writeObject(self);//SeLf changed to self,LiBrArY_fIlE changed to libraryFILE
+				//LiBrArY_fIlE.flush();
+				libraryFILE.flush();//LiBrArY_fIlE changed to libraryFILE,Method name remains same as these are library functions and if we change it .it become meaningless
+				//LiBrArY_fIlE.close();	
+				LiBrArY_fIlE.close();	//LiBrArY_fIlE changed to libraryFILE
 			}
 			catch (Exception e) {
 				throw new RuntimeException(e);
