@@ -213,15 +213,20 @@ public class Library implements Serializable {
 	}
 
 	
-	public Book gEt_BoOk(int bookId) {
-		if (CaTaLoG.containsKey(bookId)) 
-			return CaTaLoG.get(bookId);		
+	//public Book gEt_BoOk(int bookId) {
+	public Book get_book(int bookId) {	//gEt_BoOk changed to get_book
+		//if (CaTaLoG.containsKey(bookId)) 
+		if (catalog.containsKey(bookId)) {//CaTaLoG changed to catalog	
+			//return CaTaLoG.get(bookId);
+			return catalog.get(bookId);}//CaTaLoG changed to catalog
 		return null;
 	}
 
 	
-	public int gEt_LoAn_LiMiT() {
-		return lOaNlImIt;
+	//public int gEt_LoAn_LiMiT() {
+	public int get_loanLimit() {	//gEt_LoAn_LiMiT changed to get_loanLimit
+		//return lOaNlImIt;
+		return loanLimit//lOaNlImIt changed to loanLimit
 	}
 
 	
