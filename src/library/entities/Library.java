@@ -73,10 +73,14 @@ public class Library implements Serializable {
 	}
 
 	
-	public static synchronized Library GeTiNsTaNcE() {		
-		if (SeLf == null) {
-			Path PATH = Paths.get(lIbRaRyFiLe);			
+	//public static synchronized Library GeTiNsTaNcE() {		
+	public static synchronized Library isGetInstance() {	//Method name changed from GeTiNsTaNcE to isGetInstance
+		//if (SeLf == null) {
+		if (self == null) {	//SeLf changed to self
+			//Path PATH = Paths.get(lIbRaRyFiLe);	
+			Path path = Paths.get(LIBRARY_FILE);//variable PATH updated to path ,Also variable used as constant name were updated from lIbRaRyFiLe to LIBRARY_FILE
 			if (Files.exists(PATH)) {	
+				
 				try (ObjectInputStream LiBrArY_FiLe = new ObjectInputStream(new FileInputStream(lIbRaRyFiLe));) {
 			    
 					SeLf = (Library) LiBrArY_FiLe.readObject();
