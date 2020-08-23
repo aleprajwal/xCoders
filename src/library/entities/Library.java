@@ -41,11 +41,16 @@ public class Library implements Serializable {
 	//private Date lOaN_DaTe;
 	private Date loanDATE;//variable name updated from lOaN_DaTe to loanDATE
 	
-	private Map<Integer, Book> CaTaLoG;
-	private Map<Integer, Member> MeMbErS;
-	private Map<Integer, Loan> LoAnS;
-	private Map<Integer, Loan> CuRrEnT_LoAnS;
-	private Map<Integer, Book> DaMaGeD_BoOkS;
+	//private Map<Integer, Book> CaTaLoG;
+	private Map<Integer, Book> catalog; //variable name updated from CaTaLoG to catalog
+	//private Map<Integer, Member> MeMbErS;
+	private Map<Integer, Member> members;//variable name updated from MeMbErS to members
+	//private Map<Integer, Loan> LoAnS;
+	private Map<Integer, Loan> loans;//Variable name updated from LoAnS to loans
+	//private Map<Integer, Loan> CuRrEnT_LoAnS;
+	private Map<Integer, Loan> currentLOANS;//variable name updated from CuRrEnT_LoAnS to currentLOANS
+	//private Map<Integer, Book> DaMaGeD_BoOkS;
+	private Map<Integer, Book> damagedBOOKS;//variable name updated from DaMaGeD_BoOkS to damagedBOOKS
 	
 
 	private Library() {
