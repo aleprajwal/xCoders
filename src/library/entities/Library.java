@@ -140,35 +140,46 @@ public class Library implements Serializable {
 	}
 	
 	
-	private int gEt_NeXt_BoOk_Id() {
-	//private int get_next_bookID() {gEt_NeXt_BoOk_Id changed to get_next_bookID
+	//private int gEt_NeXt_BoOk_Id() {
+	private int get_next_bookID() {//gEt_NeXt_BoOk_Id changed to get_next_bookID
 		//return bOoK_Id++;
-		return bookID++;
+		return bookID++;//bOoK_Id++ changed to bookID
 	}
 
 	
-	private int gEt_NeXt_MeMbEr_Id() {
-		return mEmBeR_Id++;
+	//private int gEt_NeXt_MeMbEr_Id() {
+	private int get_next_memberID() {//gEt_NeXt_MeMbEr_Id changed to get_next_memberID
+		//return MeMbEr_Id++;
+		return memberID++;//MeMbEr_Id++ changed to memberID
 	}
 
 	
-	private int gEt_NeXt_LoAn_Id() {
-		return lOaN_Id++;
+	
+	//private int gEt_NeXt_LoAn_Id() {LoAn_Id
+	private int get_next_loanID() {//gEt_NeXt_LoAn_Id changed to get_next_loanID
+		//return LoAn_Id++;
+		return loanID++;//LoAn_Id++ changed to loanID
 	}
 
 	
-	public List<Member> lIsT_MeMbErS() {		
-		return new ArrayList<Member>(MeMbErS.values()); 
+	//public List<Member> lIsT_MeMbErS() {	
+	public List<Member> isListMembers() { //Methdd name changed from lIsT_MeMbErS to isListMembers	
+		//return new ArrayList<Member>(MeMbErS.values()); 
+		return new ArrayList<Member>(members.values()); //MeMbErS changed to members
 	}
 
 
-	public List<Book> lIsT_BoOkS() {		
-		return new ArrayList<Book>(CaTaLoG.values()); 
+	//public List<Book> lIsT_BoOkS() {
+	public List<Book> isListBooks() {	//lIsT_BoOkS changed to isListBooks
+		//return new ArrayList<Book>(CaTaLoG.values()); 
+		return new ArrayList<Book>(catalog.values()); //CaTaLoG changed to catalog because of variable name should remain same throughout the code
 	}
 
 
-	public List<Loan> lISt_CuRrEnT_LoAnS() {
-		return new ArrayList<Loan>(CuRrEnT_LoAnS.values());
+	//public List<Loan> lISt_CuRrEnT_LoAnS() {
+	public List<Loan> isListCurrentLoans() {//lISt_CuRrEnT_LoAnS changed to isListCurrentLoans	
+		//return new ArrayList<Loan>(CuRrEnT_LoAnS.values());
+		return new ArrayList<Loan>(currentLoans.values());//CuRrEnT_LoAnS changed to currentLoans
 	}
 
 
