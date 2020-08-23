@@ -257,13 +257,20 @@ public class Library implements Serializable {
 	}
 
 	
-	public Loan iSsUe_LoAn(Book book, Member member) {
-		Date dueDate = Calendar.gEtInStAnCe().gEt_DuE_DaTe(loanPeriod);
-		Loan loan = new Loan(gEt_NeXt_LoAn_Id(), book, member, dueDate);
-		member.TaKe_OuT_LoAn(loan);
-		book.BoRrOw();
-		LoAnS.put(loan.GeT_Id(), loan);
-		CuRrEnT_LoAnS.put(book.gEtId(), loan);
+	//public Loan iSsUe_LoAn(Book book, Member member) {
+	public Loan isIssueLoan(Book book, Member member) {//	iSsUe_LoAn changed to isIssueLoan
+		//Date dueDate = Calendar.gEtInStAnCe().gEt_DuE_DaTe(loanPeriod);
+		Date dueDate = Calendar.isGetInstance().get_dueDate(LOAN_PERIOD);//gEtInStAnCe().gEt_DuE_DaTe(loanPeriod) changed to get_dueDate(LOAN_PERIOD)
+		//Loan loan = new Loan(gEt_NeXt_LoAn_Id(), book, member, dueDate);
+		Loan loan = new Loan(get_nextLoanId(), book, member, dueDate);//gEt_NeXt_LoAn_Id changed to get_nextLoanId
+		//member.TaKe_OuT_LoAn(loan);
+		member.isTakeOutLoan(loan);//TaKe_OuT_LoAn changes to isTakeOutLoan
+		//book.BoRrOw();
+	        book.borrow();//BoRrOw changes to borrow
+		//LoAnS.put(loan.GeT_Id(), loan);
+		Loans.put(loan.Get_Id(), loan);//LoAnS changes to Loans
+		//CuRrEnT_LoAnS.put(book.gEtId(), loan);
+		currentLoans.put(book.Get_ID(), loan);//CuRrEnT_LoAnS,gEtId changes to currentLoans,Get_ID respectively.
 		return loan;
 	}
 	
