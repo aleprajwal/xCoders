@@ -5,7 +5,8 @@ import library.entities.Member;
 //public class pAY_fINE_cONTROL {
 public class PayFineControl {
 	
-	private PayFineUI Ui;
+	//private PayFineUI Ui;
+	private PayFineUI ui;
 	//private enum cOnTrOl_sTaTe { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };
 	private enum ControlState { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };//changed enum name
 	//private cOnTrOl_sTaTe StAtE;
@@ -19,18 +20,23 @@ public class PayFineControl {
 
 	//public pAY_fINE_cONTROL() {
 	public PayFineControl() {
-		this.LiBrArY = Library.GeTiNsTaNcE();
-		StAtE = cOnTrOl_sTaTe.INITIALISED;
+		//this.LiBrArY = Library.GeTiNsTaNcE();
+		this.library = Library.GeTiNsTaNcE();
+		//StAtE = cOnTrOl_sTaTe.INITIALISED;
+		state = ControlState.INITIALISED;
 	}
 	
 	
 	public void SeT_uI(PayFineUI uI) {
-		if (!StAtE.equals(cOnTrOl_sTaTe.INITIALISED)) {
+		//if (!StAtE.equals(cOnTrOl_sTaTe.INITIALISED)) {
+		if (!state.equals(ControlState.INITIALISED)) {
 			throw new RuntimeException("PayFineControl: cannot call setUI except in INITIALISED state");
 		}	
-		this.Ui = uI;
+		//this.Ui = uI;
+		this.ui = uI;
 		uI.SeT_StAtE(PayFineUI.uI_sTaTe.READY);
-		StAtE = cOnTrOl_sTaTe.READY;		
+		//StAtE = cOnTrOl_sTaTe.READY;
+		state = ControlState.READY;		
 	}
 
 
