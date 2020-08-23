@@ -27,47 +27,48 @@ public class ReturnBookUI {
 	}
 
 
-	public void RuN() {		
+	//public void RuN() {
+	public void run() {	// changed function name from RuN to run
 		oUtPuT("Return Book Use Case UI\n");
 		
 		while (true) {
 			
 			switch (StATe) {
 			
-			case INITIALISED:
-				break;
-				
-			case READY:
-				String BoOk_InPuT_StRiNg = iNpUt("Scan Book (<enter> completes): ");
-				if (BoOk_InPuT_StRiNg.length() == 0) 
-					CoNtRoL.sCaNnInG_cOmPlEtE();
-				
-				else {
-					try {
-						int Book_Id = Integer.valueOf(BoOk_InPuT_StRiNg).intValue();
-						CoNtRoL.bOoK_sCaNnEd(Book_Id);
+				case INITIALISED:
+					break;
+
+				case READY:
+					String BoOk_InPuT_StRiNg = iNpUt("Scan Book (<enter> completes): ");
+					if (BoOk_InPuT_StRiNg.length() == 0)
+						CoNtRoL.sCaNnInG_cOmPlEtE();
+
+					else {
+						try {
+							int Book_Id = Integer.valueOf(BoOk_InPuT_StRiNg).intValue();
+							CoNtRoL.bOoK_sCaNnEd(Book_Id);
+						}
+						catch (NumberFormatException e) {
+							oUtPuT("Invalid bookId");
+						}
 					}
-					catch (NumberFormatException e) {
-						oUtPuT("Invalid bookId");
-					}					
-				}
-				break;				
-				
-			case INSPECTING:
-				String AnS = iNpUt("Is book damaged? (Y/N): ");
-				boolean Is_DAmAgEd = false;
-				if (AnS.toUpperCase().equals("Y")) 					
-					Is_DAmAgEd = true;
-				
-				CoNtRoL.dIsChArGe_lOaN(Is_DAmAgEd);
-			
-			case COMPLETED:
-				oUtPuT("Return processing complete");
-				return;
-			
-			default:
-				oUtPuT("Unhandled state");
-				throw new RuntimeException("ReturnBookUI : unhandled state :" + StATe);			
+					break;
+
+				case INSPECTING:
+					String AnS = iNpUt("Is book damaged? (Y/N): ");
+					boolean Is_DAmAgEd = false;
+					if (AnS.toUpperCase().equals("Y"))
+						Is_DAmAgEd = true;
+
+					CoNtRoL.dIsChArGe_lOaN(Is_DAmAgEd);
+
+				case COMPLETED:
+					oUtPuT("Return processing complete");
+					return;
+
+				default:
+					oUtPuT("Unhandled state");
+					throw new RuntimeException("ReturnBookUI : unhandled state :" + StATe);
 			}
 		}
 	}
@@ -79,8 +80,10 @@ public class ReturnBookUI {
 	}	
 		
 		
-	private void oUtPuT(Object ObJeCt) {
-		System.out.println(ObJeCt);
+	//private void oUtPuT(Object ObJeCt) {
+	private void output(Object object) {	// changed function name from oUtPuT to output and argument namge from ObJeCt to object
+		//System.out.println(ObJeCt);
+		System.out.println(object);	// changed ObJeCt to object
 	}
 	
 			
