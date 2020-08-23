@@ -7,10 +7,13 @@ public class pAY_fINE_cONTROL {
 	private PayFineUI Ui;
 	//private enum cOnTrOl_sTaTe { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };
 	private enum ControlState { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };//changed enum name
-	private cOnTrOl_sTaTe StAtE;
+	//private cOnTrOl_sTaTe StAtE;
+	private ControlState state;
 	
-	private Library LiBrArY;
-	private Member MeMbEr;
+	//private Library LiBrArY;
+	private Library library;
+	//private Member MeMbEr;
+	private Member member;
 
 
 	public pAY_fINE_cONTROL() {
