@@ -29,11 +29,13 @@ public class ReturnBookUI {
 
 	//public void RuN() {
 	public void run() {	// changed function name from RuN to run
-		oUtPuT("Return Book Use Case UI\n");
+		//oUtPuT("Return Book Use Case UI\n");
+		output("Return Book Use Case UI\n");	// changed oUtPuT to output
 		
 		while (true) {
 			
-			switch (StATe) {
+			//switch (StATe) {
+			switch (state) {	// changed StATe to state
 			
 				case INITIALISED:
 					break;
