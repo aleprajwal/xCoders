@@ -341,13 +341,17 @@ public class Library implements Serializable {
 	}
 
 
-	public void RePaIr_BoOk(Book cUrReNt_BoOk) {
-		if (DaMaGeD_BoOkS.containsKey(cUrReNt_BoOk.gEtId())) {
-			cUrReNt_BoOk.RePaIr();
-			DaMaGeD_BoOkS.remove(cUrReNt_BoOk.gEtId());
+	//public void RePaIr_BoOk(Book cUrReNt_BoOk) {
+	public void isRepairBook(Book currentBook) {	// method name RePaIr_BoOk,variable name cUrReNt_BoOk were changed to isRepairBook,currentBook respectively.
+		//if (DaMaGeD_BoOkS.containsKey(cUrReNt_BoOk.gEtId())) {
+		if (damagedBooks.containsKey(currentBook.get_Id())) {	//whole line of code were corrected.
+			//cUrReNt_BoOk.RePaIr();
+			currentBook.repair();//code is fixed
+			//DaMaGeD_BoOkS.remove(cUrReNt_BoOk.gEtId());
+			damagedBooks.remove(currentBook.get_Id());//every word is fixed
 		}
-		else 
-			throw new RuntimeException("Library: repairBook: book is not damaged");
+		else {
+			throw new RuntimeException("Library: repairBook: book is not damaged");|
 		
 		
 	}
