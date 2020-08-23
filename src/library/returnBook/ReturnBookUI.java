@@ -14,8 +14,10 @@ public class ReturnBookUI {
 	private UIState state;	// changed uI_sTaTe to UIState and StATe to state
 
 	
-	public ReturnBookUI(rETURN_bOOK_cONTROL cOnTrOL) {
-		this.CoNtRoL = cOnTrOL;
+	//public ReturnBookUI(rETURN_bOOK_cONTROL cOnTrOL) {
+	public ReturnBookUI(ReturnBookControl control) {	// changed argument rETURN_bOOK_cONTROL to ReturnBookControl and cOnTrOL to control
+		//this.CoNtRoL = cOnTrOL;
+		this.control = control;	// changed this.CoNtRol to this.control and cOnTrOL to control
 		iNpUt = new Scanner(System.in);
 		StATe = uI_sTaTe.INITIALISED;
 		cOnTrOL.sEt_uI(this);
