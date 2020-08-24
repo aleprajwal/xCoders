@@ -52,37 +52,43 @@ public class Book implements Serializable {
 		return sb.toString();
 	}
 
-	public Integer gEtId() {
+//	public Integer gEtId() {
+    public Integer getID() { // changed method name gEtId to getID
 // 		return iD;
 		return id;
 	}
 
-	public String gEtTiTlE() {
+//	public String gEtTiTlE() {
+    public String getTitle() { // changed method name gEtTiTlE to getTime
 // 		return tItLe;
 		return title;
 	}
 
 
 	
-	public boolean iS_AvAiLaBlE() {
+//	public boolean iS_AvAiLaBlE() {
+    public boolean isAvailable() { // changed method name iS_AvAiLaBlE to isAvailable
 // 		return StAtE == sTaTe.AVAILABLE;
 		return State == State.AVAILABLE;
 	}
 
 	
-	public boolean iS_On_LoAn() {
+//	public boolean iS_On_LoAn() {
+    public boolean isOnLoan() { // changed method name iS_On_LoAn to isOnLoan
 // 		return StAtE == sTaTe.ON_LOAN;
 		return State == State.ON_LOAN;
 	}
 
 	
-	public boolean iS_DaMaGeD() {
+//	public boolean iS_DaMaGeD() {
+    public boolean isDamaged() { // changed method name iS_DaMaGeD to isDamaged
 // 		return StAtE == sTaTe.DAMAGED;
 		return State == State.DAMAGED;
 	}
 
 	
-	public void BoRrOw() {
+//	public void BoRrOw() {
+	public void borrowBook() { // changed method name BoRrOw to borrowBook
 // 		if (StAtE.equals(sTaTe.AVAILABLE))
 		if (State.equals(State.AVAILABLE))
 // 			StAtE = sTaTe.ON_LOAN;
@@ -96,10 +102,12 @@ public class Book implements Serializable {
 	}
 
 
-	public void ReTuRn(boolean DaMaGeD) {
+//	public void ReTuRn(boolean DaMaGeD) {
+    public void returnBook(boolean damaged) { // changed method name ReTuRn to returnBook and parameter DaMaGeD to damaged
 // 		if (StAtE.equals(sTaTe.ON_LOAN))
 		if (State.equals(State.ON_LOAN))
-			if (DaMaGeD) 
+//			if (DaMaGeD)
+			if (damaged)
 // 				StAtE = sTaTe.DAMAGED;
 				State = State.DAMAGED;
 			
@@ -115,7 +123,8 @@ public class Book implements Serializable {
 	}
 
 	
-	public void RePaIr() {
+//	public void RePaIr() {
+    public void repairBook() { // changed method name RePaIr to repairBook
 // 		if (StAtE.equals(sTaTe.DAMAGED))
 		if (State.equals(State.DAMAGED))
 // 			StAtE = sTaTe.AVAILABLE;
