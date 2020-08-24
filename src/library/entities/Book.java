@@ -105,21 +105,20 @@ public class Book implements Serializable {
 //	public void ReTuRn(boolean DaMaGeD) {
     public void returnBook(boolean damaged) { // changed method name ReTuRn to returnBook and parameter DaMaGeD to damaged
 // 		if (StAtE.equals(sTaTe.ON_LOAN))
-		if (State.equals(State.ON_LOAN))
+		if (State.equals(State.ON_LOAN)) { // added missing scope {}
 //			if (DaMaGeD)
-			if (damaged)
+			if (damaged) {
 // 				StAtE = sTaTe.DAMAGED;
 				State = State.DAMAGED;
-			
-			else 
+			} else {
 // 				StAtE = sTaTe.AVAILABLE;
 				State = State.AVAILABLE;
-			
-		
-		else 
+			}
+		}
+		else {
 // 			throw new RuntimeException(String.format("Book: cannot Return while book is in state: %s", StAtE));
 			throw new RuntimeException(String.format("Book: cannot Return while book is in state: %s", State));
-				
+		}
 	}
 
 	
