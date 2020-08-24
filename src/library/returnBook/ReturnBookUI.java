@@ -41,7 +41,8 @@ public class ReturnBookUI {
 					break;
 
 				case READY:
-					String BoOk_InPuT_StRiNg = iNpUt("Scan Book (<enter> completes): ");
+					//String BoOk_InPuT_StRiNg = iNpUt("Scan Book (<enter> completes): ");
+					String BoOk_InPuT_StRiNg = input("Scan Book (<enter> completes): ");	// changed BoOk_InPuT_StRiNg to bookInpuString and iNpUt to input
 					if (BoOk_InPuT_StRiNg.length() == 0)
 						CoNtRoL.sCaNnInG_cOmPlEtE();
 
@@ -76,9 +77,12 @@ public class ReturnBookUI {
 	}
 
 	
-	private String iNpUt(String PrOmPt) {
-		System.out.print(PrOmPt);
-		return iNpUt.nextLine();
+	//private String iNpUt(String PrOmPt) {
+	private String input(String prompt) {	// changed iNpUt to input and PrOmPt to prompt
+		//System.out.print(PrOmPt);
+		System.out.print(prompt);	// changed PrOmPt to prompt
+		//return iNpUt.nextLine();
+		return input.nextLine();	// changed iNpUt to input
 	}	
 		
 		
