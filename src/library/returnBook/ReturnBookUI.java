@@ -42,9 +42,11 @@ public class ReturnBookUI {
 
 				case READY:
 					//String BoOk_InPuT_StRiNg = iNpUt("Scan Book (<enter> completes): ");
-					String BoOk_InPuT_StRiNg = input("Scan Book (<enter> completes): ");	// changed BoOk_InPuT_StRiNg to bookInpuString and iNpUt to input
-					if (BoOk_InPuT_StRiNg.length() == 0)
-						CoNtRoL.sCaNnInG_cOmPlEtE();
+					String bookInputString = input("Scan Book (<enter> completes): ");	// changed BoOk_InPuT_StRiNg to bookInputString and iNpUt to input
+					//if (BoOk_InPuT_StRiNg.length() == 0)
+					if (bookInputString.length() == 0)	// changed BoOk_InPuT_StRiNg to bookInputString
+						//CoNtRoL.sCaNnInG_cOmPlEtE();
+						control.scanningComplete();	// changed CoNtRoL to control and sCaNnInG_cOmPlEtE() to scanningComplete()
 
 					else {
 						try {
