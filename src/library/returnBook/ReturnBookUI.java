@@ -50,8 +50,10 @@ public class ReturnBookUI {
 
 					else {
 						try {
-							int Book_Id = Integer.valueOf(BoOk_InPuT_StRiNg).intValue();
-							CoNtRoL.bOoK_sCaNnEd(Book_Id);
+							//int Book_Id = Integer.valueOf(BoOk_InPuT_StRiNg).intValue();
+							int bookID = Integer.valueOf(bookInputString).intValue();	// changed Book_Id to bookID and BoOk_InPuT_StRiNg to bookInputString
+							//CoNtRoL.bOoK_sCaNnEd(Book_Id);
+							CoNtRoL.bOoK_sCaNnEd(bookID);	// change CoNtRoL to control, bOoK_sCaNnEd to bookScanned and Book_Id to bookID
 						}
 						catch (NumberFormatException e) {
 							oUtPuT("Invalid bookId");
