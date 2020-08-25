@@ -28,14 +28,15 @@ public class PayFineControl {
 	
 	
 	//public void SeT_uI(PayFineUI uI) {
-	public void setUI(PayFineUI uI) {
+	public void setUI(PayFineUI ui) {
 		//if (!StAtE.equals(cOnTrOl_sTaTe.INITIALISED)) {
 		if (!state.equals(ControlState.INITIALISED)) {
 			throw new RuntimeException("PayFineControl: cannot call setUI except in INITIALISED state");
 		}	
 		//this.Ui = uI;
-		this.ui = uI;
-		uI.SeT_StAtE(PayFineUI.uI_sTaTe.READY);
+		this.ui = ui;
+		//ui.SeT_StAtE(PayFineUI.uI_sTaTe.READY);
+		ui.setState(PayFineUI.UIState.READY);
 		//StAtE = cOnTrOl_sTaTe.READY;
 		state = ControlState.READY;		
 	}
@@ -43,10 +44,12 @@ public class PayFineControl {
 
 	//public void CaRd_sWiPeD(int MeMbEr_Id) {
 	public void cardSwiped(int memberId) {
-		if (!StAtE.equals(cOnTrOl_sTaTe.READY)) 
+		//if (!StAtE.equals(cOnTrOl_sTaTe.READY)) 
+		if (!state.equals(ControlState.READY)) 
 			throw new RuntimeException("PayFineControl: cannot call cardSwiped except in READY state");
 			
-		MeMbEr = LiBrArY.gEt_MeMbEr(MeMbEr_Id);
+		//MeMbEr = LiBrArY.gEt_MeMbEr(MeMbEr_Id);
+		member = Library.getMember(memberId);
 		
 		if (MeMbEr == null) {
 			Ui.DiSplAY("Invalid Member Id");
