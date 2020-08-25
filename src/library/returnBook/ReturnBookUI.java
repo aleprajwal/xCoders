@@ -65,9 +65,12 @@ public class ReturnBookUI {
 				case INSPECTING:
 					//String AnS = iNpUt("Is book damaged? (Y/N): ");
 					String ans = input("Is book damaged? (Y/N): ");	// changed AnS to ans and iNpUt to input
-					boolean Is_DAmAgEd = false;
-					if (AnS.toUpperCase().equals("Y"))
-						Is_DAmAgEd = true;
+					//boolean Is_DAmAgEd = false;
+					boolean isDamaged = false;	// changed Is_DAmAgEd to isDamaged
+					//if (AnS.toUpperCase().equals("Y"))
+					if (ans.toUpperCase().equals("Y"))	// changed Ans to ans
+						//Is_DAmAgEd = true;
+						isDamaged = true;	// changed Is_DAmAgEd to isDamaged
 
 					CoNtRoL.dIsChArGe_lOaN(Is_DAmAgEd);
 
