@@ -72,10 +72,12 @@ public class ReturnBookUI {
 						//Is_DAmAgEd = true;
 						isDamaged = true;	// changed Is_DAmAgEd to isDamaged
 
-					CoNtRoL.dIsChArGe_lOaN(Is_DAmAgEd);
+					//CoNtRoL.dIsChArGe_lOaN(Is_DAmAgEd);
+					control.dischargeLoan(isDamaged);	// changed CoNtRoL to control,dIsChArGe_lOaN to dischargeLoan and Is_DAmAgEd to isDamaged
 
 				case COMPLETED:
-					oUtPuT("Return processing complete");
+					//oUtPuT("Return processing complete");
+					oUtPuT("Return processing complete");	// changed oUtPuT function name to output
 					return;
 
 				default:
