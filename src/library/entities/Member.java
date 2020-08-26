@@ -33,11 +33,15 @@ public class Member implements Serializable {
 		this.lastName = lastName;// LaSt_NaMe changed to lastName (Variable Name),this is used for the compiler to understand variable on left hand side is different than the right hand side variable
 		//this.FiRsT_NaMe = fIrSt_nAmE;
 		this.firstName = firstName;//FiRsT_NaMe changed to firstName
-		this.EmAiL_AdDrEsS = eMaIl_aDdReSs;
-		this.PhOnE_NuMbEr = pHoNe_nUmBeR;
-		this.MeMbEr_Id = mEmBeR_iD;
+		//this.EmAiL_AdDrEsS = eMaIl_aDdReSs;
+		this.emailAddress = emailAddress;//eMaIl_aDdReSs changed to emailAddress
+		//this.PhOnE_NuMbEr = pHoNe_nUmBeR;
+		this.phoneNumber = phoneNumber;//pHoNe_nUmBeR changed to phoneNumber
+		//this.MeMbEr_Id = mEmBeR_iD;
+		this.memberId = memberId;//mEmBeR_iD changed to memberId
 		
-		this.cUrReNt_lOaNs = new HashMap<>();
+		//this.cUrReNt_lOaNs = new HashMap<>();
+		this.currentLoans = new HashMap<>();//cUrReNt_lOaNs changed to currentLoans
 	}
 
 	
