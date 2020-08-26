@@ -68,24 +68,34 @@ public class PayFineControl {
 	
 	//public void CaNcEl() {
 	public void cancel() {
-		Ui.SeT_StAtE(PayFineUI.uI_sTaTe.CANCELLED);
-		StAtE = cOnTrOl_sTaTe.CANCELLED;
+		//Ui.SeT_StAtE(PayFineUI.uI_sTaTe.CANCELLED);
+		ui.setState(PayFineUI.UIState.CANCELLED);
+		//StAtE = cOnTrOl_sTaTe.CANCELLED;
+		state = ControlState.CANCELLED;
 	}
 
 
 	//public double PaY_FiNe(double AmOuNt) {
 	public double payFine(double amount) {
-		if (!StAtE.equals(cOnTrOl_sTaTe.PAYING)) 
+		//if (!StAtE.equals(cOnTrOl_sTaTe.PAYING)) 
+		if (!state.equals(ControlState.PAYING)) 
 			throw new RuntimeException("PayFineControl: cannot call payFine except in PAYING state");
 			
-		double ChAnGe = MeMbEr.PaY_FiNe(AmOuNt);
-		if (ChAnGe > 0) 
-			Ui.DiSplAY(String.format("Change: $%.2f", ChAnGe));
+		//double ChAnGe = MeMbEr.PaY_FiNe(AmOuNt);
+		double change = member.payFine(amount);
+		//if (ChAnGe > 0) 
+		if (change > 0) 
+			//Ui.DiSplAY(String.format("Change: $%.2f", ChAnGe));
+			ui.disply(String.format("Change: $%.2f", change));
 		
-		Ui.DiSplAY(MeMbEr.toString());
-		Ui.SeT_StAtE(PayFineUI.uI_sTaTe.COMPLETED);
-		StAtE = cOnTrOl_sTaTe.COMPLETED;
-		return ChAnGe;
+		//Ui.DiSplAY(MeMbEr.toString());
+		ui.display(member.toString());
+		//Ui.SeT_StAtE(PayFineUI.uI_sTaTe.COMPLETED);
+		ui.setState(PayFineUI.UIState.COMPLETED);
+		//StAtE = cOnTrOl_sTaTe.COMPLETED;
+		state = ControlState.COMPLETED;
+		//return ChAnGe;
+		return change;
 	}
 	
 
