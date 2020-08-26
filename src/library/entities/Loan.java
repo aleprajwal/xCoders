@@ -95,18 +95,21 @@ public class Loan implements Serializable {
 
 //    public Member GeT_MeMbEr() {
     public Member getMember() { // changed method name GeT_MeMbEr to getMember
-        return MeMbEr;
+//        return MeMbEr;
+		return member;
     }
 
 
 //    public Book GeT_BoOk() {
     public Book getBook() { // changed method name GeT_BoOk to getBook
-        return BoOk;
+//        return BoOk;
+		return book;
     }
 
 
 //    public void DiScHaRgE() {
     public void discharge() { // changed method name DiScHaRgE to discharge
-        StAtE = lOaN_sTaTe.DISCHARGED;        
+//        StAtE = lOaN_sTaTe.DISCHARGED;
+		state = LoanState.DISCHARGED;
     }
 }
