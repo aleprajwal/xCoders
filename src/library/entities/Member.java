@@ -110,13 +110,17 @@ public class Member implements Serializable {
 	}
 
 	
-	public String GeT_LaSt_NaMe() {
-		return LaSt_NaMe;
+	//public String GeT_LaSt_NaMe() {
+	public String getLastName() {	//Method name is fixed and verb is not used infront of method name because its a getter method 
+		//return LaSt_NaMe;
+		return lastName;//LaSt_NaMe changed to lastName
 	}
 
 	
-	public String GeT_FiRsT_NaMe() {
-		return FiRsT_NaMe;
+	//public String GeT_FiRsT_NaMe() {
+	public String getFirstName() {	//getter method is fixed
+		//return FiRsT_NaMe;
+		return firstName;//FiRsT_NaMe changed to firstName
 	}
 
 
