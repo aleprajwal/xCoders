@@ -14,9 +14,12 @@ public class Member implements Serializable {
 	private String firstName;//Variable name changed from FiRsT_NaMe to firstName
 	//private String EmAiL_AdDrEsS;
 	private String emailAddress;//variable name changed from EmAiL_AdDrEsS to emailAddress
-	private int PhOnE_NuMbEr;
-	private int MeMbEr_Id;
-	private double FiNeS_OwInG;
+	//private int PhOnE_NuMbEr;
+	private int phoneNumber;//Variable name changed from PhOnE_NuMbEr to phoneNumber
+	//private int MeMbEr_Id;
+	private int memberId;//Variable name changed from MeMbEr_Id to memberId
+	//private double FiNeS_OwInG;
+	private double finesOwing;//variable name changed from FiNeS_OwInG to finesOwing
 	
 	private Map<Integer, Loan> cUrReNt_lOaNs;
 
