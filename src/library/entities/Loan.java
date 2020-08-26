@@ -18,7 +18,7 @@ public class Loan implements Serializable {
 //    private Date DaTe;
     private Date date; // changed variable name DaTe to date
 //    private lOaN_sTaTe StAtE;
-    private lOaN_sTaTe state; // changed variable name StAtE to state
+    private LoanState state; // changed variable name StAtE to state
 
     
 //    public Loan(int loanId, Book bOoK, Member mEmBeR, Date DuE_dAtE) {
@@ -38,10 +38,13 @@ public class Loan implements Serializable {
     
 //    public void cHeCk_OvEr_DuE() {
     public void checkOverDue() { // changed method name cHeCk_OvEr_DuE to checkOverDue
-        if (StAtE == lOaN_sTaTe.CURRENT &&
-            Calendar.gEtInStAnCe().gEt_DaTe().after(DaTe)) 
-            this.StAtE = lOaN_sTaTe.OVER_DUE;            
-        
+//        if (StAtE == lOaN_sTaTe.CURRENT &&
+//            Calendar.gEtInStAnCe().gEt_DaTe().after(DaTe))
+	    if (state == LoanState.CURRENT &&
+				Calendar.gEtInStAnCe().gEt_DaTe().after(DaTe)) {
+//			this.StAtE = lOaN_sTaTe.OVER_DUE;
+			this.state = LoanState.OVER_DUE;
+		}
     }
 
     
