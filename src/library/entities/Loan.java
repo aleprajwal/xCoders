@@ -50,19 +50,22 @@ public class Loan implements Serializable {
     
 //    public boolean Is_OvEr_DuE() {
     public boolean isOverDue() { // changed method name Is_OvEr_DuE to isOverDue
-        return StAtE == lOaN_sTaTe.OVER_DUE;
+//        return StAtE == lOaN_sTaTe.OVER_DUE;
+		return state == LoanState.OVER_DUE;
     }
 
     
 //    public Integer GeT_Id() {
     public Integer getID() { // changed method name GeT_Id to getID
-        return LoAn_Id;
+//        return LoAn_Id;
+		return loanID;
     }
 
 
 //    public Date GeT_DuE_DaTe() {
      public Date getDueDate() { // changed method name GeT_DuE_DaTe to getDueDate
-        return DaTe;
+//        return DaTe;
+		 return date;
     }
     
     
