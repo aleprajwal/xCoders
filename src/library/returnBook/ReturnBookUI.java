@@ -1,6 +1,9 @@
 package library.returnBook;
 import java.util.Scanner;
 
+// Author: Saujan Thapa
+// Mediator: Mukesh Kumar
+// Reviewer: Prajwal Kumar Ale
 
 public class ReturnBookUI {
 
@@ -104,16 +107,19 @@ public class ReturnBookUI {
 		//System.out.println(ObJeCt);
 		System.out.println(object);	// changed ObJeCt to object
 	}
-	
+
 			
 	//public void DiSpLaY(Object object) {
 	public void display(Object object) {	// changed DiSpLaY to display
 		//oUtPuT(object);
 		output(object);	// changed oUtPuT to output
 	}
+
 	
-	public void sEt_sTaTe(uI_sTaTe state) {
-		this.StATe = state;
+	//public void sEt_sTaTe(uI_sTaTe state) {
+	public void setState(UIState state) {	// changed sEt_sTaTe to setState and uI_sTaTe to UIState
+		//this.StATe = state;
+		this.state = state;	// changed StATe to state
 	}
 
 	
