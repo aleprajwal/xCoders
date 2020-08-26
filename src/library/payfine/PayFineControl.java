@@ -51,13 +51,18 @@ public class PayFineControl {
 		//MeMbEr = LiBrArY.gEt_MeMbEr(MeMbEr_Id);
 		member = Library.getMember(memberId);
 		
-		if (MeMbEr == null) {
-			Ui.DiSplAY("Invalid Member Id");
+		//if (MeMbEr == null) {
+		if (member == null) {
+			//Ui.DiSplAY("Invalid Member Id");
+			ui.display("Invalid Member Id");
 			return;
 		}
-		Ui.DiSplAY(MeMbEr.toString());
-		Ui.SeT_StAtE(PayFineUI.uI_sTaTe.PAYING);
-		StAtE = cOnTrOl_sTaTe.PAYING;
+		//Ui.DiSplAY(MeMbEr.toString());
+		ui.display(member.toString());
+		//Ui.SeT_StAtE(PayFineUI.uI_sTaTe.PAYING);
+		ui.setState(PayFineUI.UIState.PAYING);
+		//StAtE = cOnTrOl_sTaTe.PAYING;
+		state = ControlState.PAYING;
 	}
 	
 	
