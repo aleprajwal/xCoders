@@ -83,8 +83,10 @@ public class Member implements Serializable {
 	}
 
 	
-	public int gEt_nUmBeR_Of_CuRrEnT_LoAnS() {
-		return cUrReNt_lOaNs.size();
+	//public int gEt_nUmBeR_Of_CuRrEnT_LoAnS() {
+	public int isGetNumberOfCurrentLoans() {	//Method name changegd from gEt_nUmBeR_Of_CuRrEnT_LoAnS to isGetNumberOfCurrentLoans
+		//return cUrReNt_lOaNs.size();
+		return currentLoans.size();//cUrReNt_lOaNs changed to currentLoans
 	}
 
 	
