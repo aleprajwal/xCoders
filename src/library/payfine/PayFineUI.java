@@ -12,13 +12,14 @@ public class PayFineUI {
     public static enum UIState { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };// Change enum naming convention
 
     //private pAY_fINE_cONTROL CoNtRoL;
-    private pAY_fINE_cONTROL control; // changed variable naming conventions
+    private PayFIneControl control; // changed variable naming conventions
     private Scanner input;
     //private uI_sTaTe StAtE;
     private UIState state;// Changed variable naming convention and Enum reference.
 
     
-    public PayFineUI(pAY_fINE_cONTROL control) {
+    //public PayFineUI(pAY_fINE_cONTROL control) {
+    public PayFineUI(PayFineControl control) {
         //this.CoNtRoL = control;
         this.control = control;// changed varible naming 
 
