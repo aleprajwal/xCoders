@@ -100,12 +100,12 @@ public class Member implements Serializable {
 	//public void TaKe_OuT_LoAn(Loan lOaN) {
 	public void isTakeOutLoan(Loan loan) {	//Method name and Parameter is fixed.
 		//if (!cUrReNt_lOaNs.containsKey(lOaN.GeT_Id())) 
-		if (!currentLoans.containsKey(loan.isGetId())) 	//According is fixed according to the previous declare variable and method names
+		if (!currentLoans.containsKey(loan.isGetId())){ 	//According is fixed according to the previous declare variable and method names
 			//cUrReNt_lOaNs.put(lOaN.GeT_Id(), lOaN);
-		        currentLoans.put(loan.isGetId(), loan); //According is fixed according to the previous declare variable and method names
+		        currentLoans.put(loan.isGetId(), loan);} //According is fixed according to the previous declare variable and method names
 		
-		else 
-			throw new RuntimeException("Duplicate loan added to member");
+		else {
+			throw new RuntimeException("Duplicate loan added to member");}
 				
 	}
 
@@ -133,10 +133,10 @@ public class Member implements Serializable {
 	//public double PaY_FiNe(double AmOuNt) {
 	public double isPayFine(double amount) {//Method name changed from PaY_FiNe to isPayFine ,Also variable name changed from AmOuNt to amount
 		//if (AmOuNt < 0) 
-		if (amount < 0) //	AmOuNt changed to amount
+		if (amount < 0) //{	AmOuNt changed to amount
 			throw new RuntimeException("Member.payFine: amount must be positive");
 		
-		double change = 0;
+		double change = 0;}
 		//if (AmOuNt > FiNeS_OwInG) {
 		if (amount > finesOwing) {	//AmOuNt,FiNeS_OwInG changed to amount,finesOwing respectively
 			//change = AmOuNt - FiNeS_OwInG;
@@ -144,9 +144,9 @@ public class Member implements Serializable {
 			//FiNeS_OwInG = 0;
 			finesOwing = 0;//FiNeS_OwInG changed to finesOwing
 		}
-		else 
+		else {
 			//FiNeS_OwInG -= AmOuNt;
-			finesOwing -= amount;	//Variable name if fixed
+			finesOwing -= amount;}	//Variable name if fixed
 		return change;
 	}
 
@@ -154,12 +154,12 @@ public class Member implements Serializable {
 	//public void dIsChArGeLoAn(Loan LoAn) {
 	public void isDischargeLoan(Loan loan) {//dIsChArGeLoAn,LoAn changed to isDischargeLoan,loan respectively	
 		//if (cUrReNt_lOaNs.containsKey(LoAn.GeT_Id())) 
-		if (currentLoans.containsKey(loan.isGetId())) 	//variable and method name is fixed
+		if (currentLoans.containsKey(loan.isGetId())){ 	//variable and method name is fixed
 			//cUrReNt_lOaNs.remove(LoAn.GeT_Id());
-		        currentLoans.remove(loan.isGetId());//variable and method name is fixed
+		        currentLoans.remove(loan.isGetId());}//variable and method name is fixed
 		
-		else 
-			throw new RuntimeException("No such loan held by member");
+		else {
+			throw new RuntimeException("No such loan held by member");}
 				
 	}
 
