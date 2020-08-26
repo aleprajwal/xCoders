@@ -69,8 +69,10 @@ public class Member implements Serializable {
 	}
 
 	
-	public int GeT_ID() {
-		return MeMbEr_Id;
+	//public int GeT_ID() {
+	public int isGetId() {	//Method name GeT_ID changed to isGetId
+		//return MeMbEr_Id;
+		return memberId;//MeMbEr_Id changed to memberID
 	}
 
 	
