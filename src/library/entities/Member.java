@@ -28,9 +28,11 @@ public class Member implements Serializable {
 	//public Member(String lAsT_nAmE, String fIrSt_nAmE, String eMaIl_aDdReSs, int pHoNe_nUmBeR, int mEmBeR_iD) {
 	public Member(String lastName, String firstName, String emailAddress, int phoneNumber, int memberId) {	//variable name corrected above were replaced here 
 		//Method name remains same as it is same as class name which is constructor,if we change method name we need to update class name as well
-		//we can update class name and method name both but that will create lot of confusions
-		this.LaSt_NaMe = lAsT_nAmE;
-		this.FiRsT_NaMe = fIrSt_nAmE;
+		//we can update class name and method name both but that will create lot of confusions as both rules are contradicting to one other.
+		//this.LaSt_NaMe = lAsT_nAmE;
+		this.lastName = lastName;// LaSt_NaMe changed to lastName (Variable Name),this is used for the compiler to understand variable on left hand side is different than the right hand side variable
+		//this.FiRsT_NaMe = fIrSt_nAmE;
+		this.firstName = firstName;//FiRsT_NaMe changed to firstName
 		this.EmAiL_AdDrEsS = eMaIl_aDdReSs;
 		this.PhOnE_NuMbEr = pHoNe_nUmBeR;
 		this.MeMbEr_Id = mEmBeR_iD;
