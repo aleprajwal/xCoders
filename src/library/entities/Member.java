@@ -56,11 +56,14 @@ public class Member implements Serializable {
 		  //.append("  Phone: ").append(PhOnE_NuMbEr)
 		  .append("  Phone: ").append(phoneNumber)	//PhOnE_NuMbEr changed to phoneNumber
 		  .append("\n")
-		  .append(String.format("  Fines Owed :  $%.2f", FiNeS_OwInG))
+		  //.append(String.format("  Fines Owed :  $%.2f", FiNeS_OwInG))
+		  .append(String.format("  Fines Owed :  $%.2f", finesOwing))	//FiNeS_OwInG changed to finesOwing
 		  .append("\n");
 		
-		for (Loan LoAn : cUrReNt_lOaNs.values()) {
-			sb.append(LoAn).append("\n");
+		//for (Loan LoAn : cUrReNt_lOaNs.values()) {
+		for (Loan loan : currentLoans.values()) {//	LoAn changed to loans,Also cUrReNt_lOaNs changed to currentLoans
+			//sb.append(LoAn).append("\n");
+			sb.append(loan).append("\n");//LoAn changed to loan
 		}		  
 		return sb.toString();
 	}
