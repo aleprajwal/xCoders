@@ -90,8 +90,10 @@ public class Member implements Serializable {
 	}
 
 	
-	public double FiNeS_OwEd() {
-		return FiNeS_OwInG;
+	//public double FiNeS_OwEd() {
+	public double isFinesOwed() {	//method name FiNeS_OwEd changed to isFinedOwed
+		//return FiNeS_OwInG;
+		return finesOwing;//FiNeS_OwInG changed to finesOwing
 	}
 
 	
