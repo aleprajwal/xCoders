@@ -130,18 +130,23 @@ public class Member implements Serializable {
 		finesOwing += fine;//FiNeS_OwInG changed to finesOwing
 	}
 	
-	public double PaY_FiNe(double AmOuNt) {
-		if (AmOuNt < 0) 
+	//public double PaY_FiNe(double AmOuNt) {
+	public double isPayFine(double amount) {//Method name changed from PaY_FiNe to isPayFine ,Also variable name changed from AmOuNt to amount
+		//if (AmOuNt < 0) 
+		if (amount < 0) //	AmOuNt changed to amount
 			throw new RuntimeException("Member.payFine: amount must be positive");
 		
 		double change = 0;
-		if (AmOuNt > FiNeS_OwInG) {
-			change = AmOuNt - FiNeS_OwInG;
-			FiNeS_OwInG = 0;
+		//if (AmOuNt > FiNeS_OwInG) {
+		if (amount > finesOwing) {	//AmOuNt,FiNeS_OwInG changed to amount,finesOwing respectfully
+			//change = AmOuNt - FiNeS_OwInG;
+			change = amount - finesOwing;//variable name is fixed
+			//FiNeS_OwInG = 0;
+			finesOwing = 0;//FiNeS_OwInG changed to finesOwing
 		}
 		else 
-			FiNeS_OwInG -= AmOuNt;
-		
+			//FiNeS_OwInG -= AmOuNt;
+			finesOwing -= amount;	//Variable name if fixed
 		return change;
 	}
 
