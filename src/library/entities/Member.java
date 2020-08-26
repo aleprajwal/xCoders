@@ -8,9 +8,12 @@ import java.util.Map;
 @SuppressWarnings("serial")
 public class Member implements Serializable {
 
-	private String LaSt_NaMe;
-	private String FiRsT_NaMe;
-	private String EmAiL_AdDrEsS;
+	//private String LaSt_NaMe;
+	private String lastName;//Variable name changed from LaSt_NaMe to lastName
+	//private String FiRsT_NaMe;
+	private String firstName;//Variable name changed from FiRsT_NaMe to firstName
+	//private String EmAiL_AdDrEsS;
+	private String emailAddress;//variable name changed from EmAiL_AdDrEsS to emailAddress
 	private int PhOnE_NuMbEr;
 	private int MeMbEr_Id;
 	private double FiNeS_OwInG;
