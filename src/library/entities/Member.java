@@ -138,7 +138,7 @@ public class Member implements Serializable {
 		
 		double change = 0;
 		//if (AmOuNt > FiNeS_OwInG) {
-		if (amount > finesOwing) {	//AmOuNt,FiNeS_OwInG changed to amount,finesOwing respectfully
+		if (amount > finesOwing) {	//AmOuNt,FiNeS_OwInG changed to amount,finesOwing respectively
 			//change = AmOuNt - FiNeS_OwInG;
 			change = amount - finesOwing;//variable name is fixed
 			//FiNeS_OwInG = 0;
@@ -151,9 +151,12 @@ public class Member implements Serializable {
 	}
 
 
-	public void dIsChArGeLoAn(Loan LoAn) {
-		if (cUrReNt_lOaNs.containsKey(LoAn.GeT_Id())) 
-			cUrReNt_lOaNs.remove(LoAn.GeT_Id());
+	//public void dIsChArGeLoAn(Loan LoAn) {
+	public void isDischargeLoan(Loan loan) {//dIsChArGeLoAn,LoAn changed to isDischargeLoan,loan respectively	
+		//if (cUrReNt_lOaNs.containsKey(LoAn.GeT_Id())) 
+		if (currentLoans.containsKey(loan.isGetId())) 	//variable and method name is fixed
+			//cUrReNt_lOaNs.remove(LoAn.GeT_Id());
+		        currentLoans.remove(loan.isGetId());//variable and method name is fixed
 		
 		else 
 			throw new RuntimeException("No such loan held by member");
