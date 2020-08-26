@@ -25,7 +25,10 @@ public class Member implements Serializable {
 	private Map<Integer, Loan> currentLoans;//Variable name changed from cUrReNt_lOaNs to currentLoans
 
 	
-	public Member(String lAsT_nAmE, String fIrSt_nAmE, String eMaIl_aDdReSs, int pHoNe_nUmBeR, int mEmBeR_iD) {
+	//public Member(String lAsT_nAmE, String fIrSt_nAmE, String eMaIl_aDdReSs, int pHoNe_nUmBeR, int mEmBeR_iD) {
+	public Member(String lastName, String firstName, String emailAddress, int phoneNumber, int memberId) {	//variable name corrected above were replaced here 
+		//Method name remains same as it is same as class name which is constructor,if we change method name we need to update class name as well
+		//we can update class name and method name both but that will create lot of confusions
 		this.LaSt_NaMe = lAsT_nAmE;
 		this.FiRsT_NaMe = fIrSt_nAmE;
 		this.EmAiL_AdDrEsS = eMaIl_aDdReSs;
