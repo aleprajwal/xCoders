@@ -21,7 +21,8 @@ public class Member implements Serializable {
 	//private double FiNeS_OwInG;
 	private double finesOwing;//variable name changed from FiNeS_OwInG to finesOwing
 	
-	private Map<Integer, Loan> cUrReNt_lOaNs;
+	//private Map<Integer, Loan> cUrReNt_lOaNs;
+	private Map<Integer, Loan> currentLoans;//Variable name changed from cUrReNt_lOaNs to currentLoans
 
 	
 	public Member(String lAsT_nAmE, String fIrSt_nAmE, String eMaIl_aDdReSs, int pHoNe_nUmBeR, int mEmBeR_iD) {
