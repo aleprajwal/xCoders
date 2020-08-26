@@ -45,12 +45,16 @@ public class Member implements Serializable {
 	}
 
 	
-	public String toString() {
+	public String toString() {//method name remains same to avoid conflicts
 		StringBuilder sb = new StringBuilder();
-		sb.append("Member:  ").append(MeMbEr_Id).append("\n")
-		  .append("  Name:  ").append(LaSt_NaMe).append(", ").append(FiRsT_NaMe).append("\n")
-		  .append("  Email: ").append(EmAiL_AdDrEsS).append("\n")
-		  .append("  Phone: ").append(PhOnE_NuMbEr)
+		//sb.append("Member:  ").append(MeMbEr_Id).append("\n")
+		sb.append("Member:  ").append(memberID).append("\n")	//MeMbEr_Id changed to memberID
+		  //.append("  Name:  ").append(LaSt_NaMe).append(", ").append(FiRsT_NaMe).append("\n")
+		  .append("  Name:  ").append(lastName).append(", ").append(firstName).append("\n")	//firstName and Lastname were updated to replace the previous ones
+		  //.append("  Email: ").append(EmAiL_AdDrEsS).append("\n")
+		  .append("  Email: ").append(emailAddress).append("\n")	//EmAiL_AdDrEsS changed to emailAddress
+		  //.append("  Phone: ").append(PhOnE_NuMbEr)
+		  .append("  Phone: ").append(phoneNumber)	//PhOnE_NuMbEr changed to phoneNumber
 		  .append("\n")
 		  .append(String.format("  Fines Owed :  $%.2f", FiNeS_OwInG))
 		  .append("\n");
