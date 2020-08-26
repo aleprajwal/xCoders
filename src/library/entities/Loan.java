@@ -36,7 +36,8 @@ public class Loan implements Serializable {
     }
 
     
-    public void cHeCk_OvEr_DuE() {
+//    public void cHeCk_OvEr_DuE() {
+    public void checkOverDue() { // changed method name cHeCk_OvEr_DuE to checkOverDue
         if (StAtE == lOaN_sTaTe.CURRENT &&
             Calendar.gEtInStAnCe().gEt_DaTe().after(DaTe)) 
             this.StAtE = lOaN_sTaTe.OVER_DUE;            
@@ -44,17 +45,20 @@ public class Loan implements Serializable {
     }
 
     
-    public boolean Is_OvEr_DuE() {
+//    public boolean Is_OvEr_DuE() {
+    public boolean isOverDue() { // changed method name Is_OvEr_DuE to isOverDue
         return StAtE == lOaN_sTaTe.OVER_DUE;
     }
 
     
-    public Integer GeT_Id() {
+//    public Integer GeT_Id() {
+    public Integer getID() { // changed method name GeT_Id to getID
         return LoAn_Id;
     }
 
 
-    public Date GeT_DuE_DaTe() {
+//    public Date GeT_DuE_DaTe() {
+     public Date getDueDate() { // changed method name GeT_DuE_DaTe to getDueDate
         return DaTe;
     }
     
@@ -74,18 +78,20 @@ public class Loan implements Serializable {
     }
 
 
-    public Member GeT_MeMbEr() {
+//    public Member GeT_MeMbEr() {
+    public Member getMember() { // changed method name GeT_MeMbEr to getMember
         return MeMbEr;
     }
 
 
-    public Book GeT_BoOk() {
+//    public Book GeT_BoOk() {
+    public Book getBook() { // changed method name GeT_BoOk to getBook
         return BoOk;
     }
 
 
-    public void DiScHaRgE() {
+//    public void DiScHaRgE() {
+    public void discharge() { // changed method name DiScHaRgE to discharge
         StAtE = lOaN_sTaTe.DISCHARGED;        
     }
-
 }
