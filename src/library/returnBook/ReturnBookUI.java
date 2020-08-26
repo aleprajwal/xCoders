@@ -77,12 +77,14 @@ public class ReturnBookUI {
 
 				case COMPLETED:
 					//oUtPuT("Return processing complete");
-					oUtPuT("Return processing complete");	// changed oUtPuT function name to output
+					output("Return processing complete");	// changed oUtPuT function name to output
 					return;
 
 				default:
-					oUtPuT("Unhandled state");
-					throw new RuntimeException("ReturnBookUI : unhandled state :" + StATe);
+					//oUtPuT("Unhandled state");
+					output("Unhandled state");	// changed oUtPuT to output
+					//throw new RuntimeException("ReturnBookUI : unhandled state :" + StATe);
+					throw new RuntimeException("ReturnBookUI : unhandled state :" + state);	// changed StATe to state
 			}
 		}
 	}
@@ -104,8 +106,10 @@ public class ReturnBookUI {
 	}
 	
 			
-	public void DiSpLaY(Object object) {
-		oUtPuT(object);
+	//public void DiSpLaY(Object object) {
+	public void display(Object object) {	// changed DiSpLaY to display
+		//oUtPuT(object);
+		output(object);	// changed oUtPuT to output
 	}
 	
 	public void sEt_sTaTe(uI_sTaTe state) {
