@@ -20,7 +20,8 @@ public class Book implements Serializable {
 //     private enum sTaTe { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
     private enum State { AVAILABLE, ON_LOAN, DAMAGED, RESERVED }; // changed sTaTe to State
 //     private sTaTe StAtE;
-    private State State; // changed sTaTe StAtE to State State
+//    private State State; // changed sTaTe StAtE to State State
+    private State state; // State variable should start with small letter
     
     
     public Book(String author, String title, String callNo, int id) {
@@ -33,7 +34,7 @@ public class Book implements Serializable {
 //         this.iD = id;
         this.id = id;
 //         this.StAtE = sTaTe.AVAILABLE;
-        this.State = State.AVAILABLE;
+        this.state = State.AVAILABLE;
     }
     
     public String toString() {
@@ -48,7 +49,7 @@ public class Book implements Serializable {
           .append("  Title:  ").append(title).append("\n")
           .append("  Author: ").append(author).append("\n")
           .append("  CallNo: ").append(callNo).append("\n")
-          .append("  State:  ").append(State);
+          .append("  State:  ").append(state);
         return sb.toString();
     }
 
@@ -69,30 +70,30 @@ public class Book implements Serializable {
 //    public boolean iS_AvAiLaBlE() {
     public boolean isAvailable() { // changed method name iS_AvAiLaBlE to isAvailable
 //         return StAtE == sTaTe.AVAILABLE;
-        return State == State.AVAILABLE;
+        return state == State.AVAILABLE;
     }
 
     
 //    public boolean iS_On_LoAn() {
     public boolean isOnLoan() { // changed method name iS_On_LoAn to isOnLoan
 //         return StAtE == sTaTe.ON_LOAN;
-        return State == State.ON_LOAN;
+        return state == State.ON_LOAN;
     }
 
     
 //    public boolean iS_DaMaGeD() {
     public boolean isDamaged() { // changed method name iS_DaMaGeD to isDamaged
 //         return StAtE == sTaTe.DAMAGED;
-        return State == State.DAMAGED;
+        return state == State.DAMAGED;
     }
 
     
 //    public void BoRrOw() {
     public void borrowBook() { // changed method name BoRrOw to borrowBook
 //         if (StAtE.equals(sTaTe.AVAILABLE))
-        if (State.equals(State.AVAILABLE))
+        if (state.equals(State.AVAILABLE))
 //             StAtE = sTaTe.ON_LOAN;
-            State = State.ON_LOAN;
+            state = State.ON_LOAN;
         
         else 
 //             throw new RuntimeException(String.format("Book: cannot borrow while book is in state: %s", StAtE));
@@ -105,14 +106,14 @@ public class Book implements Serializable {
 //    public void ReTuRn(boolean DaMaGeD) {
     public void returnBook(boolean damaged) { // changed method name ReTuRn to returnBook and parameter DaMaGeD to damaged
 //         if (StAtE.equals(sTaTe.ON_LOAN))
-        if (State.equals(State.ON_LOAN)) { // added missing scope {}
+        if (state.equals(State.ON_LOAN)) { // added missing scope {}
 //            if (DaMaGeD)
             if (damaged) {
 //                 StAtE = sTaTe.DAMAGED;
-                State = State.DAMAGED;
+                state = State.DAMAGED;
             } else {
 //                 StAtE = sTaTe.AVAILABLE;
-                State = State.AVAILABLE;
+                state = State.AVAILABLE;
             }
         }
         else {
@@ -125,13 +126,13 @@ public class Book implements Serializable {
 //    public void RePaIr() {
     public void repairBook() { // changed method name RePaIr to repairBook
 //         if (StAtE.equals(sTaTe.DAMAGED))
-        if (State.equals(State.DAMAGED))
+        if (state.equals(State.DAMAGED))
 //             StAtE = sTaTe.AVAILABLE;
-            State = State.AVAILABLE;
+            state = State.AVAILABLE;
         
         else 
 //             throw new RuntimeException(String.format("Book: cannot repair while book is in state: %s", StAtE));
-            throw new RuntimeException(String.format("Book: cannot repair while book is in state: %s", State));
+            throw new RuntimeException(String.format("Book: cannot repair while book is in state: %s", state));
         
     }
 
