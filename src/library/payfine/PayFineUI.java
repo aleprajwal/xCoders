@@ -12,20 +12,22 @@ public class PayFineUI {
     public static enum UIState { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };// Change enum naming convention
 
     //private pAY_fINE_cONTROL CoNtRoL;
-    private pAY_fINE_cONTROL control; // changed variable naming conventions
+    private PayFineControl control; // changed variable naming conventions
     private Scanner input;
     //private uI_sTaTe StAtE;
     private UIState state;// Changed variable naming convention and Enum reference.
 
     
-    public PayFineUI(pAY_fINE_cONTROL control) {
+    //public PayFineUI(pAY_fINE_cONTROL control) {
+    public PayFineUI(PayFineControl control) {
         //this.CoNtRoL = control;
         this.control = control;// changed varible naming 
 
         input = new Scanner(System.in);
         //StAtE = uI_sTaTe.INITIALISED;
         state = UIState.INITIALISED;// changed variable naming
-        control.SeT_uI(this);
+        //control.SeT_uI(this);
+        control.setUI(this);
     }
     
     
@@ -50,14 +52,14 @@ public class PayFineUI {
                 //if (Mem_Str.length() == 0) {
                 if (memStr.length() == 0) {
                     //CoNtRoL.CaNcEl();
-                    control.CaNcEl();
+                    control.cancel();
                     break;
                 }
                 try {
                     //int Member_ID = Integer.valueOf(Mem_Str).intValue();
                     int memberId = Integer.valueOf(memStr).intValue();// changed local variable name
                     //CoNtRoL.CaRd_sWiPeD(Member_ID);
-                    control.CaRd_sWiPeD(memberId);
+                    control.cardSwiped(memberId);
                 }
                 catch (NumberFormatException e) {
                     output("Invalid memberId");
@@ -72,7 +74,7 @@ public class PayFineUI {
                 //if (Amt_Str.length() == 0) {
                 if (amtStr.length() == 0) {
                     //CoNtRoL.CaNcEl();
-                    control.CaNcEl();// changed variable name
+                    control.cancel();// changed variable name
                     break;
                 }
                 try {
@@ -86,7 +88,7 @@ public class PayFineUI {
                     break;
                 }
                 //CoNtRoL.PaY_FiNe(AmouNT);
-                control.PaY_FiNe(amount);// changed variable name
+                control.payFine(amount);// changed variable name
                 break;
                                 
             case CANCELLED:
