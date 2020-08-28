@@ -3,6 +3,10 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+// Author: Prajwal Kumar Ale
+// Mediator: Sudhir Thapaliya
+// Reviewer: Saujan Thapa
+
 @SuppressWarnings("serial")
 public class Loan implements Serializable {
     
